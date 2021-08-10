@@ -1,5 +1,5 @@
-<div class="container mx-auto flex justify-between">
-    <div class="max-w-xs py-25">
+<div class="container mx-auto flex flex-wrap justify-center md:justify-between">
+    <div class="max-w-xs md:w-1/4 mb-4 py-25">
         <div class="bg-white relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg">
             <img class="rounded-t-lg" src="/images/foto1.jpg" alt="" />
             <div class="py-6 px-8 rounded-lg bg-white">
@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <div class="max-w-xs py-25">
+    <div class="max-w-xs md:w-1/4 mb-4 py-25">
         <div class="bg-white relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg">
             <img class="rounded-t-lg" src="/images/foto2.jpg" alt="" />
             <div class="py-6 px-8 rounded-lg bg-white">
@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <div class="max-w-xs py-25">
+    <div class="max-w-xs md:w-1/4 mb-4 py-25">
         <div class="bg-white relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg">
             <img class="rounded-t-lg" src="/images/foto4.png" alt="" />
             <div class="py-6 px-8 rounded-lg bg-white">
@@ -94,7 +94,7 @@
         </div>
     </div>
 
-    <div class="max-w-xs py-25">
+    <div class="max-w-xs md:w-1/4 mb-4 py-25">
         <div class="bg-white relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg">
             <img class="rounded-t-lg" src="/images/foto3.jpg" alt="Condominio El Encanto" />
             <div class="py-6 px-8 rounded-lg bg-white">
