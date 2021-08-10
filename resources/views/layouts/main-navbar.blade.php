@@ -1,12 +1,16 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
-<nav class="bg-gray-100 shadow-lg z-20 fixed w-full" x-data="{profileOptions: true, route: '{{request()->route()->getName()}}'}">
+<nav class="bg-gray-100 shadow-lg z-20 fixed w-full" x-data="{profileOptions: true, route: '{{request()->route()->getName() }}', shownavbar: false}">
     <div class="container mx-auto">
         <div class="relative flex items-center justify-between h-16">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <!-- Mobile menu button-->
                 <button type="button"
-                    class="inline-flex items-center justify-center p-2 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                    aria-controls="mobile-menu" aria-expanded="false">
+                    class="inline-flex items-center justify-center
+                    p-2 rounded-md hover:text-white hover:bg-gray-700
+                    focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                    aria-controls="mobile-menu"
+                    @click="shownavbar = ! shownavbar"
+                    aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <!--
                     Icon when menu is closed.
@@ -32,7 +36,7 @@
                     </svg>
                 </button>
             </div>
-            <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="flex-1 flex items-center justify-center sm:justify-start">
                 <div class="flex-shrink-0 flex items-center">
                     <img class="block lg:block h-10 w-auto" src="/images/pearl21.jpg" alt="Pearl Real Estate Logo">
                     {{-- <img class="block lg:hidden h-8 w-auto"
@@ -121,20 +125,37 @@
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="sm:hidden" id="mobile-menu">
+    <div x-show="shownavbar" class="sm:hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-                aria-current="page">Dashboard</a>
+            <a href="{{ route('home.index') }}"
+                :class="{
+                    'bg-yellow-500': route == 'home.index',
+                    'hover:bg-yellow-400': route != 'home.index',
+                    'text-gray-700': route == 'home.index',
+                    'hover:text-gray-700': route != 'home.index',
+                    'text-grey-700': route != 'home.index'
+                }"
+                class="block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
 
-            <a href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+            <a href="{{ route('properties.index') }}"
+                :class="{
+                    'bg-yellow-500': route == 'properties.index',
+                    'hover:bg-yellow-400': route != 'properties.index',
+                    'text-gray-700': route == 'properties.index',
+                    'hover:text-gray-700': route != 'properties.index',
+                    'text-grey-700': route != 'properties.index'
+                }"
+                class="block px-3 py-2 rounded-md text-base font-medium">Propiedades</a>
 
-            <a href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-
-            <a href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+            <a href="{{ route('contact.index') }}"
+                :class="{
+                    'bg-yellow-500': route == 'contact.index',
+                    'hover:bg-yellow-400': route != 'contact.index',
+                    'text-gray-700': route == 'contact.index',
+                    'hover:text-gray-700': route != 'contact.index',
+                    'text-grey-700': route != 'contact.index'
+                }"
+                class="block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
         </div>
     </div>
 </nav>
