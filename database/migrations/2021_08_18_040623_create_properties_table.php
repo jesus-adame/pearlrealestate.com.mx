@@ -21,6 +21,7 @@ class CreatePropertiesTable extends Migration
             $table->string('slug')->unique();
             $table->string('description');
             $table->string('image');
+            $table->decimal('price', 12);
             $table->string('features')->nullable();
             $table->timestamps();
         });

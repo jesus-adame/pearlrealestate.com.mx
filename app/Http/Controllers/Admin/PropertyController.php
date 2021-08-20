@@ -6,6 +6,7 @@ use App\Models\Property;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StorePropertyRequest;
 use Illuminate\Support\Facades\Storage;
 
 class PropertyController extends Controller
@@ -38,17 +39,27 @@ class PropertyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePropertyRequest $request)
     {
-        Property::create([
+        $data = [
             'agent_id' => $request->user()->id,
             'owner_id' => null,
             'name' => $request->name,
             'slug' => Str::random(5),
             'description' => $request->description,
+            'price' => $request->price,
             'image' => $request->file('image')->store('properties'),
-            'features' => $request->features,
-        ]);
+        ];
+
+        $features = [
+            'toilets' => $request->toilets,
+            'bedrooms' => $request->bedrooms,
+            'cars' => $request->cars,
+        ];
+
+        $data['features'] = json_encode($features);
+
+        Property::create($data);
 
         return redirect()
             ->route('admin.properties.index')

@@ -50,8 +50,8 @@
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <a href="{{ route('home.index') }}"
                             :class="{
-                                'bg-yellow-500': route == 'home.index',
-                                'hover:bg-yellow-400': route != 'home.index',
+                                'bg-yellow-400': route == 'home.index',
+                                'hover:bg-yellow-300': route != 'home.index',
                                 'text-gray-700': route == 'home.index',
                                 'hover:text-gray-700': route != 'home.index',
                                 'text-grey-700': route != 'home.index'
@@ -61,8 +61,8 @@
 
                         <a href="{{ route('properties.index') }}"
                             :class="{
-                                'bg-yellow-500': route == 'properties.index',
-                                'hover:bg-yellow-400': route != 'properties.index',
+                                'bg-yellow-400': route == 'properties.index',
+                                'hover:bg-yellow-300': route != 'properties.index',
                                 'text-gray-700': route == 'properties.index',
                                 'hover:text-gray-700': route != 'properties.index',
                                 'text-grey-700': route != 'properties.index'
@@ -71,8 +71,8 @@
 
                         <a href="{{ route('contact.index') }}"
                             :class="{
-                                'bg-yellow-500': route == 'contact.index',
-                                'hover:bg-yellow-400': route != 'contact.index',
+                                'bg-yellow-400': route == 'contact.index',
+                                'hover:bg-yellow-300': route != 'contact.index',
                                 'text-gray-700': route == 'contact.index',
                                 'hover:text-gray-700': route != 'contact.index',
                                 'text-grey-700': route != 'contact.index'
@@ -129,8 +129,8 @@
         <div class="px-2 pt-2 pb-3 space-y-1">
             <a href="{{ route('home.index') }}"
                 :class="{
-                    'bg-yellow-500': route == 'home.index',
-                    'hover:bg-yellow-400': route != 'home.index',
+                    'bg-yellow-400': route == 'home.index',
+                    'hover:bg-yellow-300': route != 'home.index',
                     'text-gray-700': route == 'home.index',
                     'hover:text-gray-700': route != 'home.index',
                     'text-grey-700': route != 'home.index'
@@ -139,8 +139,8 @@
 
             <a href="{{ route('properties.index') }}"
                 :class="{
-                    'bg-yellow-500': route == 'properties.index',
-                    'hover:bg-yellow-400': route != 'properties.index',
+                    'bg-yellow-400': route == 'properties.index',
+                    'hover:bg-yellow-300': route != 'properties.index',
                     'text-gray-700': route == 'properties.index',
                     'hover:text-gray-700': route != 'properties.index',
                     'text-grey-700': route != 'properties.index'
@@ -149,8 +149,8 @@
 
             <a href="{{ route('contact.index') }}"
                 :class="{
-                    'bg-yellow-500': route == 'contact.index',
-                    'hover:bg-yellow-400': route != 'contact.index',
+                    'bg-yellow-400': route == 'contact.index',
+                    'hover:bg-yellow-300': route != 'contact.index',
                     'text-gray-700': route == 'contact.index',
                     'hover:text-gray-700': route != 'contact.index',
                     'text-grey-700': route != 'contact.index'

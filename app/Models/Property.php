@@ -15,7 +15,29 @@ class Property extends Model
         'name',
         'slug',
         'description',
+        'price',
         'image',
         'features',
     ];
+
+    public function getToiletsAttribute()
+    {
+        $features = json_decode($this->features, true);
+
+        return $features['toilets'] ?? null;
+    }
+
+    public function getBedroomsAttribute()
+    {
+        $features = json_decode($this->features, true);
+
+        return $features['bedrooms'] ?? null;
+    }
+
+    public function getCarsAttribute()
+    {
+        $features = json_decode($this->features, true);
+
+        return $features['cars'] ?? null;
+    }
 }

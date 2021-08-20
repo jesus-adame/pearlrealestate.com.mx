@@ -53,7 +53,7 @@
 
                     <button
                         type="submit"
-                        class="uppercase text-sm font-bold tracking-wide bg-yellow-500 text-gray-700 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
+                        class="uppercase text-sm font-bold tracking-wide bg-yellow-400 hover:bg-yellow-500 text-gray-700 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
                         Enviar mensaje
                     </button>
                 </div>
