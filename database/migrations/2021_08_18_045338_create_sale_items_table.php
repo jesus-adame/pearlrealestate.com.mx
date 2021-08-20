@@ -18,7 +18,7 @@ class CreateSaleItemsTable extends Migration
             $table->foreignId('sale_id');
             $table->integer('quantity');
             $table->float('tax_amount');
-            $table->float('price');
+            $table->decimal('price', 12, 2);
             $table->foreignId('salable_id');
             $table->string('salable_type');
             $table->timestamps();
