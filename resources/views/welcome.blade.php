@@ -5,7 +5,7 @@
                 <ul class="splide__list">
                     <li class="splide__slide">
                         <div class="overflow-hidden relative h-full" style="min-height: 400px">
-                            <img class="filter h-full brightness-50" src="/images/slide5.jpg" alt="Pearl Estate">
+                            <img class="filter h-full w-full brightness-50" src="/images/slide5.jpg" alt="Pearl Estate">
                             <div class="absolute top-0 bottom-0 right-0 left-0 m-auto w-full max-w-7xl h-52 p-5">
                                 <p class="text-4xl text-gray-50 uppercase mb-4" style="text-shadow: 1px 2px 2px #000">
                                     Encuentra tu lugar ideal
@@ -21,7 +21,7 @@
                     </li>
                     <li class="splide__slide">
                         <div class="overflow-hidden relative h-full" style="min-height: 400px">
-                            <img class="filter h-full brightness-50" src="/images/slide1.jpg" alt="Pearl Estate">
+                            <img class="filter h-full w-full brightness-50" src="/images/slide1.jpg" alt="Pearl Estate">
                             <div class="absolute top-0 bottom-0 right-0 left-0 m-auto w-full max-w-7xl h-52 p-5">
                                 <p class="text-4xl text-gray-50 uppercase mb-4" style="text-shadow: 1px 2px 2px #000">
                                     Encuentra tu lugar ideal
@@ -37,7 +37,7 @@
                     </li>
                     <li class="splide__slide">
                         <div class="overflow-hidden relative h-full" style="min-height: 400px">
-                            <img class="filter h-full brightness-50" src="/images/slider1.jpg" alt="Pearl Estate">
+                            <img class="filter h-full w-full brightness-50" src="/images/slider1.jpg" alt="Pearl Estate">
                             <div class="absolute top-0 bottom-0 right-0 left-0 m-auto w-full max-w-7xl h-52 p-5">
                                 <p class="text-4xl text-gray-50 uppercase mb-4" style="text-shadow: 1px 2px 2px #000">
                                     Encuentra tu lugar ideal
