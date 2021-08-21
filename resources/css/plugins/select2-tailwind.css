@@ -8,7 +8,7 @@
 }
 	.select2-container .select2-selection--single {
 		/* Selection box itself */
-		@apply box-border cursor-pointer block select-none shadow border rounded select-none;
+		@apply box-border cursor-pointer block select-none shadow border rounded;
 	}
 
 		.select2-container .select2-selection--single .select2-selection__rendered {
@@ -70,12 +70,12 @@
 
 .select2-container--open .select2-dropdown--above {
 	/* The left and right borders of the option rows */
-	@apply rounded border-gray-400 shadow;
+	@apply rounded border-gray-400;
 }
 
 .select2-container--open .select2-dropdown--below {
 	/* The left and right borders of the option rows */
-	@apply rounded border-gray-400 shadow;
+	@apply rounded border-gray-400;
 }
 
 .select2-search--dropdown {
@@ -182,7 +182,7 @@
 }
 
 .select2-container--default .select2-selection--multiple {
-	@apply p-1 min-h-full h-full border-solid border rounded shadow bg-white; 
+	@apply p-1 min-h-full h-full border-solid border rounded bg-white; 
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__rendered {
@@ -211,7 +211,7 @@
 	@apply hidden;
 }
 .select2-container--classic .select2-selection--multiple .select2-selection__choice {
-	@apply bg-gray-300 border-2 shadow rounded float-left cursor-default mt-1 mr-1 px-1;
+	@apply bg-gray-300 border-2 rounded float-left cursor-default mt-1 mr-1 px-1;
 }
 .select2-container--default .select2-search--dropdown .select2-search__field {
 	/* The border of the search textbox */

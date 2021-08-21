@@ -16,7 +16,7 @@
                                 <th class="text-white bg-gray-800 p-2 w-24 text-center">Slug</th>
                                 <th class="text-white bg-gray-800 p-2 w-40 text-left">Title</th>
                                 <th class="text-white bg-gray-800 p-2 w-40">description</th>
-                                <th class="text-white bg-gray-800 p-2 w-20">Price</th>
+                                <th class="text-white bg-gray-800 p-2 w-20 text-right">Price</th>
                                 <th class="text-white bg-gray-800 p-2 w-40 text-center">
                                     <a class="py-1 px-2 bg-blue-600 hover:bg-blue-700 text-white inline-block rounded" href="{{ route('admin.properties.create') }}">
                                         Registrar
@@ -33,8 +33,9 @@
                                     <td class="text-center">{{ $property->slug }}</td>
                                     <td class="text-left">{{ $property->name }}</td>
                                     <td class="text-center">{{ $property->description }}</td>
-                                    <td class="text-center">{{ $property->price }}</td>
+                                    <td class="text-right">{{ number_format($property->price) }} MXN</td>
                                     <td class="text-center">
+                                        <a href="{{ route('admin.properties.edit', $property->id) }}">Editar</a>
                                         <form action="{{ route('admin.properties.destroy', [$property->id]) }}" method="POST">
                                             @csrf @method('delete')
                                             <button class="py-1 px-2 bg-gray-900 text-white inline-block rounded" type="submit">Eliminar</button>

@@ -7,6 +7,9 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePropertyRequest;
+use App\Http\Requests\UpdatePropertyRequest;
+use App\Models\Amenity;
+use App\Models\AmenityProperty;
 use Illuminate\Support\Facades\Storage;
 
 class PropertyController extends Controller
@@ -30,7 +33,8 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        return view('admin.properties.create');
+        $amenities = Amenity::all();
+        return view('admin.properties.create', compact('amenities'));
     }
 
     /**
@@ -58,7 +62,7 @@ class PropertyController extends Controller
             'toilets'         => $request->toilets,
             'bedrooms'        => $request->bedrooms,
             'cars'            => $request->cars,
-            'floors'          => $request->floors,
+            'floors'          => $request->floors_number,
             'building_meters' => $request->building_meters,
             'ground_meters'   => $request->ground_meters,
             'building_age'    => $request->building_age,
@@ -66,7 +70,18 @@ class PropertyController extends Controller
 
         $data['features'] = json_encode($features);
 
-        Property::create($data);
+        $amenities = Amenity::all();
+
+        $property = Property::create($data);
+
+        foreach ($amenities as $amenity) {
+            if ($request->input($amenity->slug)) {
+                AmenityProperty::create([
+                    'amenity_id' => $amenity->id,
+                    'property_id' => $property->id,
+                ]);
+            }
+        }
 
         return redirect()
             ->route('admin.properties.index')
@@ -92,7 +107,11 @@ class PropertyController extends Controller
      */
     public function edit(Property $property)
     {
-        return view('admin.properties.edit', compact('property'));
+        $amenities = Amenity::all();
+
+        $states_json = collect(json_decode(file_get_contents(public_path("/assets/estados.json"))));
+        
+        return view('admin.properties.edit', compact('property', 'amenities'));
     }
 
     /**
@@ -102,7 +121,7 @@ class PropertyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Property $property)
+    public function update(UpdatePropertyRequest $request, Property $property)
     {
         $data = [
             'agent_id'    => $request->user()->id,
@@ -114,20 +133,35 @@ class PropertyController extends Controller
             'city'        => $request->city,
             'address'     => $request->address,
             'price'       => $request->price,
-            'image'       => $request->file('image')->store('properties'),
         ];
 
         $features = [
             'toilets'         => $request->toilets,
             'bedrooms'        => $request->bedrooms,
             'cars'            => $request->cars,
-            'floors'          => $request->floors,
+            'floors'          => $request->floors_number,
             'building_meters' => $request->building_meters,
             'ground_meters'   => $request->ground_meters,
             'building_age'    => $request->building_age,
         ];
 
-        Storage::delete($property->image);
+        if ($request->file('image')) {
+            Storage::delete($property->image);
+            $data['image'] = $request->file('image')->store('properties');
+        }
+
+        $amenities = Amenity::all();
+
+        $property->amenities()->detach();
+
+        foreach ($amenities as $amenity) {
+            if ($request->input($amenity->slug)) {
+                AmenityProperty::create([
+                    'amenity_id' => $amenity->id,
+                    'property_id' => $property->id,
+                ]);
+            }
+        }
 
         $data['features'] = json_encode($features);
 
