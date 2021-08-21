@@ -19,15 +19,15 @@
                     </div>
                     <a href="https://wa.me/+527775335652"
                         target="_blank"
-                        class="mt-6 block py-2 px-4 bg-yellow-400 hover:bg-yellow-500 text-center text-gray-800 font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        class="mt-6 block py-2 px-4 bg-yellow-400 hover:bg-yellow-500 text-center text-gray-800 font-bold rounded-md shadow-md hover:shadow-lg transition duration-300">
                         <span class="flex justify-center">
                             <img class="w-5 mr-2" src="/images/whatsapp-brands.svg" alt="WhatsApp">
                             Contactar
                         </span>
                     </a>
                 </div>
-                <div class="absolute top-2 right-2 py-1 px-3 bg-white rounded-lg shadow">
-                    <span class="text-md text-green-700 font-semibold">{{ $property->price }} MXN</span>
+                <div class="absolute top-2 right-2 py-1 px-3 bg-white rounded-lg shadow cursor-default">
+                    <span class="text-md text-green-700 font-semibold">{{ number_format($property->price) }} MXN</span>
                 </div>
             </div>
         </div>

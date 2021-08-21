@@ -1,7 +1,13 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
-<nav class="bg-gray-100 shadow-lg z-20 fixed w-full" x-data="{profileOptions: true, route: '{{request()->route()->getName() }}', shownavbar: false}">
+<nav class="z-20 absolute w-full"
+    :class="{'bg-white': route != 'home.index'}"
+    x-data="{
+        profileOptions: true,
+        route: '{{request()->route()->getName()}}',
+        shownavbar: false,
+    }">
     <div class="container mx-auto">
-        <div class="relative flex items-center justify-between h-16">
+        <div class="relative flex items-center justify-between h-16 md:h-24">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <!-- Mobile menu button-->
                 <button type="button"
@@ -38,7 +44,7 @@
             </div>
             <div class="flex-1 flex items-center justify-center sm:justify-start">
                 <div class="flex-shrink-0 flex items-center">
-                    <img class="block lg:block h-10 w-auto" src="/images/pearl21.jpg" alt="Pearl Real Estate Logo">
+                    <img class="block lg:block h-14 md:h-24 w-auto" src="/images/pearl21.jpg" alt="Pearl Real Estate Logo">
                     {{-- <img class="block lg:hidden h-8 w-auto"
                         src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
                     <img class="hidden lg:block h-8 w-auto"
@@ -47,37 +53,32 @@
                 </div>
                 <div class="hidden sm:block sm:ml-auto">
                     <div class="flex space-x-4 uppercase">
-                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <a href="{{ route('home.index') }}"
                             :class="{
                                 'bg-yellow-400': route == 'home.index',
-                                'hover:bg-yellow-300': route != 'home.index',
-                                'text-gray-700': route == 'home.index',
-                                'hover:text-gray-700': route != 'home.index',
-                                'text-grey-700': route != 'home.index'
+                                'hover:bg-yellow-500': route != 'home.index',
+                                'hover:text-gray-800': route != 'home.index',
                             }"
-                            class="px-3 py-2 font-semibold rounded-md text-sm"
+                            class="px-3 py-3 font-semibold rounded-sm transition duration-300 text-sm"
                             aria-current="page">Inicio</a>
 
                         <a href="{{ route('properties.index') }}"
                             :class="{
                                 'bg-yellow-400': route == 'properties.index',
-                                'hover:bg-yellow-300': route != 'properties.index',
-                                'text-gray-700': route == 'properties.index',
-                                'hover:text-gray-700': route != 'properties.index',
-                                'text-grey-700': route != 'properties.index'
+                                'hover:bg-yellow-500': route != 'properties.index',
+                                'hover:text-gray-800': route != 'properties.index',
+                                'text-gray-100': route == 'home.index' && route != 'properties.index',
                             }"
-                            class="px-3 py-2 font-semibold rounded-md text-sm">Propiedades</a>
+                            class="px-3 py-3 font-semibold rounded-sm transition duration-300 text-sm">Propiedades</a>
 
                         <a href="{{ route('contact.index') }}"
                             :class="{
                                 'bg-yellow-400': route == 'contact.index',
-                                'hover:bg-yellow-300': route != 'contact.index',
-                                'text-gray-700': route == 'contact.index',
-                                'hover:text-gray-700': route != 'contact.index',
-                                'text-grey-700': route != 'contact.index'
+                                'hover:bg-yellow-500': route != 'contact.index',
+                                'hover:text-gray-800': route != 'contact.index',
+                                'text-gray-100': route == 'home.index' && route != 'contact.index',
                             }"
-                            class="px-3 py-2 font-semibold rounded-md text-sm">Contacto</a>
+                            class="px-3 py-3 font-semibold rounded-sm transition duration-300 text-sm">Contacto</a>
                     </div>
                 </div>
             </div>
@@ -125,7 +126,7 @@
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div x-show="shownavbar" class="sm:hidden" id="mobile-menu">
+    <div x-show="shownavbar" class="sm:hidden bg-gray-100" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1">
             <a href="{{ route('home.index') }}"
                 :class="{
@@ -133,7 +134,7 @@
                     'hover:bg-yellow-300': route != 'home.index',
                     'text-gray-700': route == 'home.index',
                     'hover:text-gray-700': route != 'home.index',
-                    'text-grey-700': route != 'home.index'
+                    'text-gray-700': route != 'home.index'
                 }"
                 class="block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
 
@@ -143,7 +144,7 @@
                     'hover:bg-yellow-300': route != 'properties.index',
                     'text-gray-700': route == 'properties.index',
                     'hover:text-gray-700': route != 'properties.index',
-                    'text-grey-700': route != 'properties.index'
+                    'text-gray-700': route != 'properties.index'
                 }"
                 class="block px-3 py-2 rounded-md text-base font-medium">Propiedades</a>
 
@@ -153,7 +154,7 @@
                     'hover:bg-yellow-300': route != 'contact.index',
                     'text-gray-700': route == 'contact.index',
                     'hover:text-gray-700': route != 'contact.index',
-                    'text-grey-700': route != 'contact.index'
+                    'text-gray-700': route != 'contact.index'
                 }"
                 class="block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
         </div>
