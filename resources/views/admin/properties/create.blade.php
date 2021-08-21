@@ -16,12 +16,12 @@
                     <div class="w-full md:w-1/2 px-2">
                         <div>
                             <x-label for="name" value="Nombre" />
-                            <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                            <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" autofocus />
                         </div>
                         
                         <div class="mt-4">
                             <x-label for="description" value="Descripción" />
-                            <x-input id="description" class="block mt-1 w-full" type="text" name="description" :value="old('description')" required />
+                            <x-input id="description" class="block mt-1 w-full" type="text" name="description" :value="old('description')" />
                         </div>
 
                         <div class="mt-4">
@@ -45,7 +45,7 @@
         
                         <div class="mt-4">
                             <x-label for="price" value="Precio" />
-                            <x-input id="price" class="block mt-1 w-full" type="text" name="price" :value="old('price')" required />
+                            <x-input id="price" class="block mt-1 w-full" type="text" name="price" :value="old('price')" />
                         </div>
                     </div>
 
@@ -55,8 +55,7 @@
                                 <x-label for="image" value="Image" />
                                 <input id="image" class="block mt-1 w-full"
                                     type="file"
-                                    name="image"
-                                    required />
+                                    name="image"/>
                             </div>
                         </div>
                         <div class="flex w-full">
@@ -64,14 +63,14 @@
                                 <x-label for="toilets" value="Baños" />
                                 <x-input id="toilets" class="block mt-1 w-full"
                                     type="text"
-                                    name="toilets" :value="old('toilets')" required />
+                                    name="toilets" :value="old('toilets')"/>
                             </div>
             
                             <div class="mt-4 w-1/2 mx-1">
                                 <x-label for="cars" value="Carros" />
                                 <x-input id="cars" class="block mt-1 w-full"
                                     type="text"
-                                    name="cars" :value="old('cars')" required />
+                                    name="cars" :value="old('cars')"/>
                             </div>
                         </div>
                         <div class="flex w-full">
@@ -79,14 +78,14 @@
                                 <x-label for="building_meters" value="Métros cuadrados de constucción" />
                                 <x-input id="building_meters" class="block mt-1 w-full"
                                     type="text"
-                                    name="building_meters" :value="old('building_meters')" required />
+                                    name="building_meters" :value="old('building_meters')"/>
                             </div>
             
                             <div class="mt-4 w-1/2 mx-1">
                                 <x-label for="ground_meters" value="Métros cuadrados de terreno" />
                                 <x-input id="ground_meters" class="block mt-1 w-full"
                                     type="text"
-                                    name="ground_meters" :value="old('ground_meters')" required />
+                                    name="ground_meters" :value="old('ground_meters')"/>
                             </div>
                         </div>
                         <div class="flex w-full">
@@ -94,13 +93,13 @@
                                 <x-label for="building_age" value="Antugüedad de construcción (Años)" />
                                 <x-input id="building_age" class="block mt-1 w-full"
                                     type="text"
-                                    name="building_age" :value="old('building_age')" required />
+                                    name="building_age" :value="old('building_age')"/>
                             </div>
                             <div class="mt-4 w-1/2 mx-1">
                                 <x-label for="floors_number" value="Número de pisos" />
                                 <x-input id="floors_number" class="block mt-1 w-full"
                                     type="text"
-                                    name="floors_number" :value="old('floors_number')" required />
+                                    name="floors_number" :value="old('floors_number')"/>
                             </div>
                         </div>
                         <div class="flex w-full">
@@ -108,7 +107,7 @@
                                 <x-label for="bedrooms" value="Recámaras" />
                                 <x-input id="bedrooms" class="block mt-1 w-full"
                                     type="text"
-                                    name="bedrooms" :value="old('bedrooms')" required />
+                                    name="bedrooms" :value="old('bedrooms')"/>
                             </div>
                         </div>
                     </div>

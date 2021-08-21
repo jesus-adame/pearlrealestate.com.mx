@@ -7,7 +7,6 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePropertyRequest;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 
 class PropertyController extends Controller
@@ -31,13 +30,7 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        $cities_json = file_get_contents(public_path("/assets/municipios.json"));
-        $cities = new Collection(json_decode($cities_json));
-
-        $states_json = file_get_contents(public_path("/assets/estados.json"));
-        $states = new Collection(json_decode($states_json));
-        
-        return view('admin.properties.create', compact('cities', 'states'));
+        return view('admin.properties.create');
     }
 
     /**
@@ -49,19 +42,26 @@ class PropertyController extends Controller
     public function store(StorePropertyRequest $request)
     {
         $data = [
-            'agent_id' => $request->user()->id,
-            'owner_id' => null,
-            'name' => $request->name,
-            'slug' => Str::random(5),
+            'agent_id'    => $request->user()->id,
+            'owner_id'    => null,
+            'name'        => $request->name,
+            'slug'        => Str::random(5),
             'description' => $request->description,
-            'price' => $request->price,
-            'image' => $request->file('image')->store('properties'),
+            'state'       => $request->state,
+            'city'        => $request->city,
+            'address'     => $request->address,
+            'price'       => $request->price,
+            'image'       => $request->file('image')->store('properties'),
         ];
 
         $features = [
-            'toilets' => $request->toilets,
-            'bedrooms' => $request->bedrooms,
-            'cars' => $request->cars,
+            'toilets'         => $request->toilets,
+            'bedrooms'        => $request->bedrooms,
+            'cars'            => $request->cars,
+            'floors'          => $request->floors,
+            'building_meters' => $request->building_meters,
+            'ground_meters'   => $request->ground_meters,
+            'building_age'    => $request->building_age,
         ];
 
         $data['features'] = json_encode($features);
@@ -90,9 +90,9 @@ class PropertyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Property $property)
     {
-        return view('admin.properties.edit');
+        return view('admin.properties.edit', compact('property'));
     }
 
     /**
@@ -102,9 +102,40 @@ class PropertyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Property $property)
     {
-        //
+        $data = [
+            'agent_id'    => $request->user()->id,
+            'owner_id'    => null,
+            'name'        => $request->name,
+            'slug'        => Str::random(5),
+            'description' => $request->description,
+            'state'       => $request->state,
+            'city'        => $request->city,
+            'address'     => $request->address,
+            'price'       => $request->price,
+            'image'       => $request->file('image')->store('properties'),
+        ];
+
+        $features = [
+            'toilets'         => $request->toilets,
+            'bedrooms'        => $request->bedrooms,
+            'cars'            => $request->cars,
+            'floors'          => $request->floors,
+            'building_meters' => $request->building_meters,
+            'ground_meters'   => $request->ground_meters,
+            'building_age'    => $request->building_age,
+        ];
+
+        Storage::delete($property->image);
+
+        $data['features'] = json_encode($features);
+
+        $property->update($data);
+
+        return redirect()
+            ->route('admin.properties.index')
+            ->with('success', 'Actualizada correctamente');
     }
 
     /**
