@@ -42,19 +42,26 @@ class PropertyController extends Controller
     public function store(StorePropertyRequest $request)
     {
         $data = [
-            'agent_id' => $request->user()->id,
-            'owner_id' => null,
-            'name' => $request->name,
-            'slug' => Str::random(5),
+            'agent_id'    => $request->user()->id,
+            'owner_id'    => null,
+            'name'        => $request->name,
+            'slug'        => Str::random(5),
             'description' => $request->description,
-            'price' => $request->price,
-            'image' => $request->file('image')->store('properties'),
+            'state'       => $request->state,
+            'city'        => $request->city,
+            'address'     => $request->address,
+            'price'       => $request->price,
+            'image'       => $request->file('image')->store('properties'),
         ];
 
         $features = [
-            'toilets' => $request->toilets,
-            'bedrooms' => $request->bedrooms,
-            'cars' => $request->cars,
+            'toilets'         => $request->toilets,
+            'bedrooms'        => $request->bedrooms,
+            'cars'            => $request->cars,
+            'floors'          => $request->floors,
+            'building_meters' => $request->building_meters,
+            'ground_meters'   => $request->ground_meters,
+            'building_age'    => $request->building_age,
         ];
 
         $data['features'] = json_encode($features);
@@ -83,9 +90,9 @@ class PropertyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Property $property)
     {
-        return view('admin.properties.edit');
+        return view('admin.properties.edit', compact('property'));
     }
 
     /**
@@ -95,9 +102,40 @@ class PropertyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Property $property)
     {
-        //
+        $data = [
+            'agent_id'    => $request->user()->id,
+            'owner_id'    => null,
+            'name'        => $request->name,
+            'slug'        => Str::random(5),
+            'description' => $request->description,
+            'state'       => $request->state,
+            'city'        => $request->city,
+            'address'     => $request->address,
+            'price'       => $request->price,
+            'image'       => $request->file('image')->store('properties'),
+        ];
+
+        $features = [
+            'toilets'         => $request->toilets,
+            'bedrooms'        => $request->bedrooms,
+            'cars'            => $request->cars,
+            'floors'          => $request->floors,
+            'building_meters' => $request->building_meters,
+            'ground_meters'   => $request->ground_meters,
+            'building_age'    => $request->building_age,
+        ];
+
+        Storage::delete($property->image);
+
+        $data['features'] = json_encode($features);
+
+        $property->update($data);
+
+        return redirect()
+            ->route('admin.properties.index')
+            ->with('success', 'Actualizada correctamente');
     }
 
     /**

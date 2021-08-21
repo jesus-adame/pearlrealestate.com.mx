@@ -26,11 +26,18 @@ class StorePropertyRequest extends FormRequest
         return [
             'name'          => 'required|min:4|max:255',
             'description'   => 'required',
-            'image'         => 'nullable',
+            'state'         => 'required',
+            'city'          => 'required',
+            'address'       => 'required',
+            'image'         => 'required',
             'price'         => 'required|numeric|max:9999999999',
             'toilets'       => 'required|numeric',
             'bedrooms'      => 'required|numeric',
             'cars'          => 'required|numeric',
+            'floors'        => 'required|numeric',
+            'building_meters' => 'required',
+            'ground_meters' => 'required',
+            'building_age'  => 'required',
         ];
     }
 }

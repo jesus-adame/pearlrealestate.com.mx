@@ -1,4 +1,11 @@
 window._ = require('lodash');
+import $ from 'jquery';
+
+try {
+    window.$ = window.jQuery = $;
+    window.select2 = require('select2');
+
+} catch (error) {}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
