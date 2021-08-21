@@ -2,9 +2,13 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
 @import './splide.min.css';
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import './plugins/select2.css';
+
+@import './plugins/select2-tailwind.css';
 
 body {
     font-family: 'Open Sans', sans-serif;

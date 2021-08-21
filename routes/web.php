@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\Admin\PropertyController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PropertiesController;
+use App\Http\Controllers\StateController;
 use App\Http\Controllers\WellcomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +24,9 @@ Route::get('/propiedades', [ PropertiesController::class, 'index' ])->name('prop
 
 Route::get('/contact', [ ContactController::class, 'index' ])->name('contact.index');
 Route::post('/contact/send', [ ContactController::class, 'send' ])->name('contact.send');
+
+Route::get('/ciudades-json', [ CityController::class, 'getJson' ])->name('cities.json');
+Route::get('/estados-json', [ StateController::class, 'getJson' ])->name('states.json');
 
 require __DIR__.'/auth.php';
 

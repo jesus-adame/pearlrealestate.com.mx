@@ -23,10 +23,24 @@
                             <x-label for="description" value="Descripción" />
                             <x-input id="description" class="block mt-1 w-full" type="text" name="description" :value="old('description')" required />
                         </div>
-        
+
                         <div class="mt-4">
-                            <x-label for="address" value="Dirección" />
-                            <x-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required />
+                            <label for="state">Estado de la República</label>
+                            <select id="state" class="block mt-1 w-full border-gray-300 rounded-md select-states" name="state">
+                                <option value="">- Seleccionar -</option>
+                            </select>
+                        </div>
+
+                        <div class="mt-4">
+                            <label for="city">Ciudad</label>
+                            <select id="city" class="block mt-1 w-full border-gray-300 rounded-md select-cities" name="city">
+                                <option value="">- Seleccionar -</option>
+                            </select>
+                        </div>
+
+                        <div class="mt-4">
+                            <label for="address">Dirección</label>
+                            <input type="text" id="address" class="block mt-1 w-full border-gray-300 rounded-md" name="address">
                         </div>
         
                         <div class="mt-4">
@@ -62,31 +76,31 @@
                         </div>
                         <div class="flex w-full">
                             <div class="mt-4 w-1/2 mx-1">
-                                <x-label for="toilets" value="Métros cuadrados de constucción" />
-                                <x-input id="toilets" class="block mt-1 w-full"
+                                <x-label for="building_meters" value="Métros cuadrados de constucción" />
+                                <x-input id="building_meters" class="block mt-1 w-full"
                                     type="text"
-                                    name="toilets" :value="old('toilets')" required />
+                                    name="building_meters" :value="old('building_meters')" required />
                             </div>
             
                             <div class="mt-4 w-1/2 mx-1">
-                                <x-label for="cars" value="Métros cuadrados de terreno" />
-                                <x-input id="cars" class="block mt-1 w-full"
+                                <x-label for="ground_meters" value="Métros cuadrados de terreno" />
+                                <x-input id="ground_meters" class="block mt-1 w-full"
                                     type="text"
-                                    name="cars" :value="old('cars')" required />
+                                    name="ground_meters" :value="old('ground_meters')" required />
                             </div>
                         </div>
                         <div class="flex w-full">
                             <div class="mt-4 w-1/2 mx-1">
-                                <x-label for="toilets" value="Antugüedad de construcción (Años)" />
-                                <x-input id="toilets" class="block mt-1 w-full"
+                                <x-label for="building_age" value="Antugüedad de construcción (Años)" />
+                                <x-input id="building_age" class="block mt-1 w-full"
                                     type="text"
-                                    name="toilets" :value="old('toilets')" required />
+                                    name="building_age" :value="old('building_age')" required />
                             </div>
                             <div class="mt-4 w-1/2 mx-1">
-                                <x-label for="toilets" value="Número de pisos" />
-                                <x-input id="toilets" class="block mt-1 w-full"
+                                <x-label for="floors_number" value="Número de pisos" />
+                                <x-input id="floors_number" class="block mt-1 w-full"
                                     type="text"
-                                    name="toilets" :value="old('toilets')" required />
+                                    name="floors_number" :value="old('floors_number')" required />
                             </div>
                         </div>
                         <div class="flex w-full">
@@ -145,7 +159,7 @@
     
                 <div class="flex items-center justify-end mt-4">
                     <x-button class="ml-4">
-                        {{ __('Register') }}
+                        Registrar
                     </x-button>
                 </div>
             </form>

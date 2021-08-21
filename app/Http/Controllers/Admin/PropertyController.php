@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePropertyRequest;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 
 class PropertyController extends Controller
@@ -30,7 +31,13 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        return view('admin.properties.create');
+        $cities_json = file_get_contents(public_path("/assets/municipios.json"));
+        $cities = new Collection(json_decode($cities_json));
+
+        $states_json = file_get_contents(public_path("/assets/estados.json"));
+        $states = new Collection(json_decode($states_json));
+        
+        return view('admin.properties.create', compact('cities', 'states'));
     }
 
     /**
