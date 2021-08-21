@@ -18,7 +18,7 @@
                                 <th class="text-white bg-gray-800 p-2 w-40">description</th>
                                 <th class="text-white bg-gray-800 p-2 w-20 text-right">Price</th>
                                 <th class="text-white bg-gray-800 p-2 w-40 text-center">
-                                    <a class="py-1 px-2 bg-blue-600 hover:bg-blue-700 text-white inline-block rounded" href="{{ route('admin.properties.create') }}">
+                                    <a class="py-1 w-20 bg-blue-600 hover:bg-blue-700 text-white inline-block rounded" href="{{ route('admin.properties.create') }}">
                                         Registrar
                                     </a>
                                 </th>
@@ -33,12 +33,12 @@
                                     <td class="text-center">{{ $property->slug }}</td>
                                     <td class="text-left">{{ $property->name }}</td>
                                     <td class="text-center">{{ $property->description }}</td>
-                                    <td class="text-right">{{ number_format($property->price) }} MXN</td>
+                                    <td class="text-right">{{ $property->price }} MXN</td>
                                     <td class="text-center">
-                                        <a href="{{ route('admin.properties.edit', $property->id) }}">Editar</a>
+                                        <a class="w-20 my-1 rounded py-1 inline-block bg-yellow-300" href="{{ route('admin.properties.edit', $property->id) }}">Editar</a>
                                         <form action="{{ route('admin.properties.destroy', [$property->id]) }}" method="POST">
                                             @csrf @method('delete')
-                                            <button class="py-1 px-2 bg-gray-900 text-white inline-block rounded" type="submit">Eliminar</button>
+                                            <button class="py-1 my-1 w-20 bg-gray-900 text-white inline-block rounded" type="submit">Eliminar</button>
                                         </form>
                                     </td>
                                 </tr>

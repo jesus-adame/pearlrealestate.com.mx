@@ -21,6 +21,7 @@ Route::get('/', [WellcomeController::class, 'index'])->name('home.index');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::get('/propiedades', [ PropertiesController::class, 'index' ])->name('properties.index');
+Route::get('/propiedades/{property}', [ PropertiesController::class, 'show' ])->name('properties.show');
 
 Route::get('/contact', [ ContactController::class, 'index' ])->name('contact.index');
 Route::post('/contact/send', [ ContactController::class, 'send' ])->name('contact.send');

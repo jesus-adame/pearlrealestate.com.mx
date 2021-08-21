@@ -51,7 +51,7 @@
         
                         <div class="mt-4">
                             <x-label for="price" value="Precio" />
-                            <x-input id="price" class="block mt-1 w-full" type="text" name="price" :value="old('price', $property->price)" />
+                            <x-input id="price" class="block mt-1 w-full" type="text" name="price" :value="old('price', $property->price_value)" />
                         </div>
                     </div>
 

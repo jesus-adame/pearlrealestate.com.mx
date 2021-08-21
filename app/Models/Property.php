@@ -23,6 +23,16 @@ class Property extends Model
         'features',
     ];
 
+    public function getPriceAttribute($value)
+    {
+        return number_format($value);
+    }
+
+    public function getPriceValueAttribute()
+    {
+        return str_replace(',', '', $this->price);
+    }
+
     public function getToiletsAttribute()
     {
         $features = json_decode($this->features, true);

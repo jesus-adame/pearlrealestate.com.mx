@@ -12,4 +12,13 @@ class PropertiesController extends Controller
         $properties = Property::all();
         return view('properties.index', compact('properties'));
     }
+
+    public function show(Property $property)
+    {
+        $properties = Property::orderByDesc('updated_at')
+            ->limit(4)
+            ->get();
+
+        return view('properties.show', compact('property', 'properties'));
+    }
 }
