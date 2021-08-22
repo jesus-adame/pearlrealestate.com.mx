@@ -5,7 +5,7 @@
         lg:w-2/3 lg:-mt-40
         mx-auto p-10
         shadow-md border-t-8
-        border-yellow-400
+        border-theme
         rounded">
         <div class="flex flex-wrap text-center justify-between">
             <div class="md:w-1/3 mb-4">

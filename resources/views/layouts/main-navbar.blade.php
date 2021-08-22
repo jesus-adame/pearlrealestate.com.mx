@@ -57,37 +57,38 @@
                     <div class="flex space-x-4 uppercase">
                         <a href="{{ route('home.index') }}"
                             :class="{
-                                'bg-yellow-400': route == 'home.index',
+                                'text-theme': route == 'home.index',
+                                'bg-theme': route == 'home.index',
                                 'hover:bg-yellow-500': route != 'home.index',
-                                'hover:text-gray-800': route != 'home.index',
+                                'hover:text-theme': route != 'home.index',
                             }"
                             class="px-3 py-3 font-semibold rounded-sm transition duration-300 text-sm"
                             aria-current="page">Inicio</a>
 
                         <a href="{{ route('properties.index') }}"
                             :class="{
-                                'bg-yellow-400': route == 'properties.index',
+                                'bg-theme': route == 'properties.index',
                                 'hover:bg-yellow-500': route != 'properties.index',
-                                'hover:text-gray-800': route != 'properties.index',
-                                'text-gray-100': route == 'home.index' && route != 'properties.index',
+                                'hover:text-theme': route != 'properties.index',
+                                'text-theme': route == 'home.index' || route == 'properties.index',
                             }"
                             class="px-3 py-3 font-semibold rounded-sm transition duration-300 text-sm">Propiedades</a>
 
                         <a href="{{ route('contact.index') }}"
                             :class="{
-                                'bg-yellow-400': route == 'contact.index',
+                                'bg-theme': route == 'contact.index',
                                 'hover:bg-yellow-500': route != 'contact.index',
-                                'hover:text-gray-800': route != 'contact.index',
-                                'text-gray-100': route == 'home.index' && route != 'contact.index',
+                                'hover:text-theme': route != 'contact.index',
+                                'text-theme': route == 'home.index' || route == 'contact.index',
                             }"
                             class="px-3 py-3 font-semibold rounded-sm transition duration-300 text-sm">Contacto</a>
 
                         <a href="{{ route('login') }}"
                             :class="{
-                                'bg-yellow-400': route == 'login',
+                                'bg-theme': route == 'login',
                                 'hover:bg-yellow-500': route != 'login',
-                                'hover:text-gray-800': route != 'login',
-                                'text-gray-100': route == 'home.index' && route != 'login',
+                                'hover:text-theme': route != 'login',
+                                'text-theme': route == 'home.index' || route == 'login',
                             }"
                             class="px-3 py-1 font-semibold rounded-sm transition duration-300 text-sm flex items-center">
                             <div class="w-5 mr-2">

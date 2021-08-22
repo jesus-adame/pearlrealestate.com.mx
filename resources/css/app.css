@@ -10,6 +10,11 @@
 
 @import './plugins/select2-tailwind.css';
 
+:root {
+    --main-bg-color: #033c5d;
+    --main-text-color: #fff;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -31,4 +36,24 @@ h2 {
 h3 {
     font-size: 22px;
     font-weight: 600;
+}
+
+.bg-theme {
+    background-color: var(--main-bg-color);
+}
+
+.text-theme, a.text-theme {
+    color: var(--main-text-color);
+}
+
+.text-theme-link, a.text-theme-link {
+    color: var(--main-bg-color);
+}
+
+.hover\:text-theme:hover {
+    color: var(--main-text-color);
+}
+
+.border-theme {
+    border-color: var(--main-bg-color);
 }
