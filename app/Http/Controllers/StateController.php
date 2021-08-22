@@ -18,20 +18,21 @@ class StateController extends Controller
         if (request('term')) {
             $statesFounded = $states->filter(function ($state) {
                 return strpos(strtolower($state->name), strtolower(request()->term)) !== false;
-            });
+            })
+            ->take(20);
+
         } else {
-            $statesFounded = $states;
+            $statesFounded = $states->take(20);
         }
 
-        $statesFounded->take(25)
-            ->map(function ($state) {
-                return [
-                    'text' => $state->name,
-                    'id' => $state->id,
-                ];
-            })
-            ->values();
+        $jsonResponse = $statesFounded->map(function ($state) {
+            return [
+                'text' => $state->name,
+                'id' => $state->id,
+            ];
+        })
+        ->values();
 
-        return response()->json($states);
+        return response()->json($jsonResponse);
     }
 }
