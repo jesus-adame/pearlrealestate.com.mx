@@ -84,6 +84,10 @@ class Property extends Model
 
     public function scopeSearch($query, $value)
     {
+        if (empty($value)) {
+            return $query;
+        }
+
         $states = collect(json_decode(file_get_contents(public_path("/assets/estados.json"))));
         $cities = collect(json_decode(file_get_contents(public_path("/assets/municipios.json"))));
 
