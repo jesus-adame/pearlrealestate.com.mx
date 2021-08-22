@@ -46,7 +46,7 @@
 
                         <div class="mt-4">
                             <label for="address">Dirección</label>
-                            <x-input type="text" id="address" class="block mt-1 w-full border-gray-300 rounded-md" name="address" :value="old('address', $property->description)"/>
+                            <x-input type="text" id="address" class="block mt-1 w-full border-gray-300 rounded-md" name="address" :value="old('address', $property->address)"/>
                         </div>
         
                         <div class="mt-4">
