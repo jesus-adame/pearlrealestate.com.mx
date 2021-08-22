@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-    <section>
+    <section class="my-24">
         <div class="container mx-auto mb-20">
             <h1 class="text-center my-10">Pearl Real Estate</h1>
 

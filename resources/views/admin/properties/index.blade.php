@@ -12,11 +12,11 @@
                     <table class="table-fixed w-full">
                         <thead>
                             <tr>
-                                <th class="text-white bg-gray-800 p-2 w-16 text-center">Image</th>
+                                <th class="text-white bg-gray-800 p-2 w-16 text-center">Imagen</th>
                                 <th class="text-white bg-gray-800 p-2 w-24 text-center">Slug</th>
-                                <th class="text-white bg-gray-800 p-2 w-40 text-left">Title</th>
-                                <th class="text-white bg-gray-800 p-2 w-40">description</th>
-                                <th class="text-white bg-gray-800 p-2 w-20 text-right">Price</th>
+                                <th class="text-white bg-gray-800 p-2 w-40 text-left">Título</th>
+                                <th class="text-white bg-gray-800 p-2 w-40">Descripción</th>
+                                <th class="text-white bg-gray-800 p-2 w-20 text-right">Precio</th>
                                 <th class="text-white bg-gray-800 p-2 w-40 text-center">
                                     <a class="py-1 w-20 bg-blue-600 hover:bg-blue-700 text-white inline-block rounded" href="{{ route('admin.properties.create') }}">
                                         Registrar
@@ -33,7 +33,7 @@
                                     <td class="text-center">{{ $property->slug }}</td>
                                     <td class="text-left">{{ $property->name }}</td>
                                     <td class="text-center">{{ $property->description }}</td>
-                                    <td class="text-right">{{ $property->price }} MXN</td>
+                                    <td class="text-right">{{ $property->price }}</td>
                                     <td class="text-center">
                                         <a class="w-20 my-1 rounded py-1 inline-block bg-yellow-300" href="{{ route('admin.properties.edit', $property->id) }}">Editar</a>
                                         <form action="{{ route('admin.properties.destroy', [$property->id]) }}" method="POST">

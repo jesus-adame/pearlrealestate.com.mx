@@ -24,28 +24,28 @@
                     <span class="uppercase text-sm text-gray-600 font-bold">Nombre *</span>
                     <input
                         name="name"
-                        class="w-full border-gray-300 bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                        type="text" placeholder="">
+                        class="w-full border-gray-300 bg-gray-100 text-gray-900 mt-2 p-3 rounded-md"
+                        type="text" autofocus placeholder="">
                 </div>
                 <div class="mt-8">
                     <span class="uppercase text-sm text-gray-600 font-bold">Email *</span>
                     <input
                         name="email"
-                        class="w-full border-gray-300 bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                        class="w-full border-gray-300 bg-gray-100 text-gray-900 mt-2 p-3 rounded-md"
                         type="email">
                 </div>
                 <div class="mt-8">
                     <span class="uppercase text-sm text-gray-600 font-bold">Teléfono *</span>
                     <input
                         name="phone_number"
-                        class="w-full border-gray-300 bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                        class="w-full border-gray-300 bg-gray-100 text-gray-900 mt-2 p-3 rounded-md"
                         type="text">
                 </div>
                 <div class="mt-8">
                     <span class="uppercase text-sm text-gray-600 font-bold">Mensaje *</span>
                     <textarea
                         name="message"
-                        class="w-full border-gray-300 h-32 bg-gray-200 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
+                        class="w-full border-gray-300 h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-md"></textarea>
                 </div>
                 <div class="mt-8">
                     <!-- Validation Errors -->
@@ -53,7 +53,7 @@
 
                     <button
                         type="submit"
-                        class="uppercase text-sm font-bold tracking-wide bg-theme hover:bg-yellow-500 text-theme p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
+                        class="uppercase text-sm font-bold tracking-wide bg-theme hover:bg-theme text-theme p-3 rounded-md w-full transition duration-200 ease-in-out">
                         Enviar mensaje
                     </button>
                 </div>
