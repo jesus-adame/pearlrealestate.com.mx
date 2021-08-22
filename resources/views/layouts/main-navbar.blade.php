@@ -44,8 +44,8 @@
             </div>
             <div class="flex-1 flex items-center justify-center sm:justify-start">
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('home.index') }}" class="bg-white py-2 px-2" :class="{ 'opacity-90': route == 'home.index' }">
-                        <img class="block lg:block h-14 md:h-24 w-auto" src="/images/logo_pearl_2.png" alt="Pearl Real Estate Logo">
+                    <a href="{{ route('home.index') }}" class="bg-white py-1 px-2 inline-block h-14 md:h-24" :class="{ 'opacity-90': route == 'home.index' }">
+                        <img class="block lg:block h-full w-auto" src="/images/logo_pearl_2.png" alt="Pearl Real Estate Logo">
                     </a>
                     {{-- <img class="block lg:hidden h-8 w-auto"
                         src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
