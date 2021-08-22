@@ -15,7 +15,7 @@ class StateController extends Controller
         $states_colection = new Collection(json_decode($states_json));
 
         $states = $states_colection->filter(function ($state) {
-                return strpos(strtolower($state->name), strtolower(request()->term)) !== false;
+                return strpos(strtolower($state->name), strtolower(request()->term ?? '')) !== false;
             })
             ->take(25)
             ->map(function ($state) {
