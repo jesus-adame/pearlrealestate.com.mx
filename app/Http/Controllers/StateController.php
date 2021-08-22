@@ -18,10 +18,10 @@ class StateController extends Controller
                 return strpos(strtolower($state->name), strtolower(request()->term)) !== false;
             })
             ->take(25)
-            ->map(function ($state, $index) {
+            ->map(function ($state) {
                 return [
                     'text' => $state->name,
-                    'id' => $index,
+                    'id' => $state->id,
                 ];
             })
             ->values();

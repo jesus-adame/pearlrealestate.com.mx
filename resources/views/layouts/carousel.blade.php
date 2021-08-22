@@ -14,7 +14,9 @@
                                 nos enfocamos en darte la mejor opción en distribución arquitectónica, según sea sus
                                 distintas necesidades
                             </p>
-                            <a href="#properties" class="rounded-sm mt-6 py-2 px-6 font-semibold hover:bg-yellow-500 bg-yellow-400 inline-block uppercase text-center shadow-md transition duration-300">Conoce más</a>
+                            <a href="#properties" class="rounded-sm text-theme mt-6 py-2 px-6 font-semibold hover:bg-theme bg-theme inline-block uppercase text-center shadow-md transition duration-300">
+                                Conoce más
+                            </a>
                         </div>
                     </div>
                 </li>
@@ -30,7 +32,9 @@
                                 nos enfocamos en darte la mejor opción en distribución arquitectónica, según sea sus
                                 distintas necesidades
                             </p>
-                            <a href="#properties" class="rounded-sm mt-6 py-2 px-6 font-semibold hover:bg-yellow-500 bg-yellow-400 inline-block uppercase text-center shadow-md transition duration-300">Conoce más</a>
+                            <a href="#properties" class="rounded-sm text-theme mt-6 py-2 px-6 font-semibold hover:bg-theme bg-theme inline-block uppercase text-center shadow-md transition duration-300">
+                                Conoce más
+                            </a>
                         </div>
                     </div>
                 </li>
@@ -46,7 +50,9 @@
                                 nos enfocamos en darte la mejor opción en distribución arquitectónica, según sea sus
                                 distintas necesidades
                             </p>
-                            <a href="#properties" class="rounded-sm mt-6 py-2 px-6 font-semibold hover:bg-yellow-500 bg-yellow-400 inline-block uppercase text-center shadow-md transition duration-300">Conoce más</a>
+                            <a href="#properties" class="rounded-sm text-theme mt-6 py-2 px-6 font-semibold hover:bg-theme bg-theme inline-block uppercase text-center shadow-md transition duration-300">
+                                Conoce más
+                            </a>
                         </div>
                     </div>
                 </li>

@@ -44,7 +44,9 @@
             </div>
             <div class="flex-1 flex items-center justify-center sm:justify-start">
                 <div class="flex-shrink-0 flex items-center">
-                    <img class="block lg:block h-14 md:h-24 w-auto" src="/images/pearl21.jpg" alt="Pearl Real Estate Logo">
+                    <a href="{{ route('home.index') }}" class="bg-white py-2 px-2" :class="{ 'opacity-90': route == 'home.index' }">
+                        <img class="block lg:block h-14 md:h-24 w-auto" src="/images/logo_pearl_2.png" alt="Pearl Real Estate Logo">
+                    </a>
                     {{-- <img class="block lg:hidden h-8 w-auto"
                         src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
                     <img class="hidden lg:block h-8 w-auto"
@@ -55,30 +57,47 @@
                     <div class="flex space-x-4 uppercase">
                         <a href="{{ route('home.index') }}"
                             :class="{
-                                'bg-yellow-400': route == 'home.index',
-                                'hover:bg-yellow-500': route != 'home.index',
-                                'hover:text-gray-800': route != 'home.index',
+                                'text-theme': route == 'home.index',
+                                'bg-theme': route == 'home.index',
+                                'hover:bg-theme': route != 'home.index',
+                                'hover:text-theme': route != 'home.index',
                             }"
                             class="px-3 py-3 font-semibold rounded-sm transition duration-300 text-sm"
                             aria-current="page">Inicio</a>
 
                         <a href="{{ route('properties.index') }}"
                             :class="{
-                                'bg-yellow-400': route == 'properties.index',
-                                'hover:bg-yellow-500': route != 'properties.index',
-                                'hover:text-gray-800': route != 'properties.index',
-                                'text-gray-100': route == 'home.index' && route != 'properties.index',
+                                'bg-theme': route == 'properties.index',
+                                'hover:bg-theme': route != 'properties.index',
+                                'hover:text-theme': route != 'properties.index',
+                                'text-theme': route == 'home.index' || route == 'properties.index',
                             }"
                             class="px-3 py-3 font-semibold rounded-sm transition duration-300 text-sm">Propiedades</a>
 
                         <a href="{{ route('contact.index') }}"
                             :class="{
-                                'bg-yellow-400': route == 'contact.index',
-                                'hover:bg-yellow-500': route != 'contact.index',
-                                'hover:text-gray-800': route != 'contact.index',
-                                'text-gray-100': route == 'home.index' && route != 'contact.index',
+                                'bg-theme': route == 'contact.index',
+                                'hover:bg-theme': route != 'contact.index',
+                                'hover:text-theme': route != 'contact.index',
+                                'text-theme': route == 'home.index' || route == 'contact.index',
                             }"
                             class="px-3 py-3 font-semibold rounded-sm transition duration-300 text-sm">Contacto</a>
+
+                        <a href="{{ route('login') }}"
+                            :class="{
+                                'bg-theme': route == 'login',
+                                'hover:bg-theme': route != 'login',
+                                'hover:text-theme': route != 'login',
+                                'text-theme': route == 'home.index' || route == 'login',
+                            }"
+                            class="px-3 py-1 font-semibold rounded-sm transition duration-300 text-sm flex items-center">
+                            <div class="w-5 mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sign-in-alt" class="svg-inline--fa fa-sign-in-alt fa-w-16" role="img" viewBox="0 0 512 512">
+                                    <path fill="currentColor" d="M416 448h-84c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h84c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32h-84c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h84c53 0 96 43 96 96v192c0 53-43 96-96 96zm-47-201L201 79c-15-15-41-4.5-41 17v96H24c-13.3 0-24 10.7-24 24v96c0 13.3 10.7 24 24 24h136v96c0 21.5 26 32 41 17l168-168c9.3-9.4 9.3-24.6 0-34z"/>
+                                </svg>
+                            </div>
+                            Entrar
+                        </a>
                     </div>
                 </div>
             </div>
@@ -157,6 +176,22 @@
                     'text-gray-700': route != 'contact.index'
                 }"
                 class="block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
+            <a href="{{ route('login') }}"
+                :class="{
+                    'bg-yellow-400': route == 'login',
+                    'hover:bg-yellow-300': route != 'login',
+                    'text-gray-700': route == 'login',
+                    'hover:text-gray-700': route != 'login',
+                    'text-gray-700': route != 'login'
+                }"
+                class="flex items-center px-3 py-2 rounded-md text-base font-medium">
+                <div class="w-5 mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sign-in-alt" class="svg-inline--fa fa-sign-in-alt fa-w-16" role="img" viewBox="0 0 512 512">
+                        <path fill="currentColor" d="M416 448h-84c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h84c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32h-84c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h84c53 0 96 43 96 96v192c0 53-43 96-96 96zm-47-201L201 79c-15-15-41-4.5-41 17v96H24c-13.3 0-24 10.7-24 24v96c0 13.3 10.7 24 24 24h136v96c0 21.5 26 32 41 17l168-168c9.3-9.4 9.3-24.6 0-34z"/>
+                    </svg>
+                </div>
+                Entrar
+            </a>
         </div>
     </div>
 </nav>

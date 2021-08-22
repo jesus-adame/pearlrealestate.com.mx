@@ -9740,7 +9740,7 @@ $(function () {
         };
       }
     }
-  });
+  }).trigger('change');
   $('.select-cities').select2({
     width: 'resolve',
     ajax: {
@@ -9762,7 +9762,7 @@ $(function () {
         };
       }
     }
-  });
+  }).trigger('change');
 });
 
 /***/ }),

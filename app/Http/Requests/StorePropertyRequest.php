@@ -34,7 +34,7 @@ class StorePropertyRequest extends FormRequest
             'toilets'       => 'required|numeric',
             'bedrooms'      => 'required|numeric',
             'cars'          => 'required|numeric',
-            'floors'        => 'required|numeric',
+            'floors_number' => 'required|numeric',
             'building_meters' => 'required',
             'ground_meters' => 'required',
             'building_age'  => 'required',

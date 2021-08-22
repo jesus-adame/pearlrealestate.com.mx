@@ -40,7 +40,7 @@
 
                         <div class="mt-4">
                             <label for="address">Dirección</label>
-                            <input type="text" id="address" class="block mt-1 w-full border-gray-300 rounded-md" name="address">
+                            <x-input type="text" id="address" class="block mt-1 w-full border-gray-300 rounded-md" name="address" :value="old('address')"/>
                         </div>
         
                         <div class="mt-4">
@@ -116,44 +116,12 @@
                     <h3>Amenidades</h3>
                 </div>
                 <div class="flex flex-wrap justify-between w-full">
-                    <div class="mt-4 flex items-center space-x-2 w-1/3 md:w-1/5 mx-1">
-                        <input type="checkbox" name="kitchen" id="kitchen">
-                        <x-label for="kitchen" value="Cocina" />
-                    </div>
-                    <div class="mt-4 flex items-center space-x-2 w-1/3 md:w-1/5 mx-1">
-                        <input type="checkbox" name="living_room" id="living_room">
-                        <x-label for="living_room" value="Sala" />
-                    </div>
-                    <div class="mt-4 flex items-center space-x-2 w-1/3 md:w-1/5 mx-1">
-                        <input type="checkbox" name="fireplace" id="fireplace">
-                        <x-label for="fireplace" value="Chimenea" />
-                    </div>
-                    <div class="mt-4 flex items-center space-x-2 w-1/3 md:w-1/5 mx-1">
-                        <input type="checkbox" name="pool" id="pool">
-                        <x-label for="pool" value="Alberca" />
-                    </div>
-                    <div class="mt-4 flex items-center space-x-2 w-1/3 md:w-1/5 mx-1">
-                        <input type="checkbox" name="jacuzzi" id="jacuzzi">
-                        <x-label for="jacuzzi" value="Jacuzzi" />
-                    </div>
-                </div>
-                <div class="flex flex-wrap justify-between w-full">
-                    <div class="mt-4 flex items-center space-x-2 w-1/3 md:w-1/5 mx-1">
-                        <input type="checkbox" name="laundry_room" id="laundry_room">
-                        <x-label for="laundry_room" value="Cuarto de lavado" />
-                    </div>
-                    <div class="mt-4 flex items-center space-x-2 w-1/3 md:w-1/5 mx-1">
-                        <input type="checkbox" name="cistern" id="cistern">
-                        <x-label for="cistern" value="Cisterna" />
-                    </div>
-                    <div class="mt-4 flex items-center space-x-2 w-1/3 md:w-1/5 mx-1">
-                        <input type="checkbox" name="terrace" id="terrace">
-                        <x-label for="terrace" value="Terraza" />
-                    </div>
-                    <div class="mt-4 flex items-center space-x-2 w-1/3 md:w-1/5 mx-1">
-                        <input type="checkbox" name="firepit" id="firepit">
-                        <x-label for="firepit" value="Firepit" />
-                    </div>
+                    @foreach ($amenities as $amenity)
+                        <div class="mt-4 flex items-center space-x-2 w-1/3 md:w-1/5 mx-1">
+                            <input type="checkbox" name="{{ $amenity->slug }}" id="{{ $amenity->slug }}">
+                            <x-label for="{{ $amenity->slug }}" value="{{ $amenity->name }}" />
+                        </div>
+                    @endforeach
                 </div>
     
                 <div class="flex items-center justify-end mt-4">

@@ -19,7 +19,7 @@
         @stack('scripts')
     </head>
     <body class="h-full">
-        <div class="font-sans text-gray-900 antialiased">
+        <div class="font-sans text-gray-700 antialiased">
             @include('layouts.main-navbar')
             {{ $slot }}
             @include('layouts.footer')

@@ -28,7 +28,7 @@ $(function() {
                 }
             }
         }
-    })
+    }).trigger('change');
 
     $('.select-cities').select2({
         width: 'resolve',
@@ -51,5 +51,5 @@ $(function() {
                 }
             }
         }
-    })
+    }).trigger('change');
 });
