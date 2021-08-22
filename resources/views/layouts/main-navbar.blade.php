@@ -59,7 +59,7 @@
                             :class="{
                                 'text-theme': route == 'home.index',
                                 'bg-theme': route == 'home.index',
-                                'hover:bg-yellow-500': route != 'home.index',
+                                'hover:bg-theme': route != 'home.index',
                                 'hover:text-theme': route != 'home.index',
                             }"
                             class="px-3 py-3 font-semibold rounded-sm transition duration-300 text-sm"
@@ -68,7 +68,7 @@
                         <a href="{{ route('properties.index') }}"
                             :class="{
                                 'bg-theme': route == 'properties.index',
-                                'hover:bg-yellow-500': route != 'properties.index',
+                                'hover:bg-theme': route != 'properties.index',
                                 'hover:text-theme': route != 'properties.index',
                                 'text-theme': route == 'home.index' || route == 'properties.index',
                             }"
@@ -77,7 +77,7 @@
                         <a href="{{ route('contact.index') }}"
                             :class="{
                                 'bg-theme': route == 'contact.index',
-                                'hover:bg-yellow-500': route != 'contact.index',
+                                'hover:bg-theme': route != 'contact.index',
                                 'hover:text-theme': route != 'contact.index',
                                 'text-theme': route == 'home.index' || route == 'contact.index',
                             }"
@@ -86,7 +86,7 @@
                         <a href="{{ route('login') }}"
                             :class="{
                                 'bg-theme': route == 'login',
-                                'hover:bg-yellow-500': route != 'login',
+                                'hover:bg-theme': route != 'login',
                                 'hover:text-theme': route != 'login',
                                 'text-theme': route == 'home.index' || route == 'login',
                             }"

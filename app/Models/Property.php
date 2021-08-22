@@ -82,17 +82,44 @@ class Property extends Model
         return $features['floors'] ?? null;
     }
 
+    public function scopeSearch($query, $value)
+    {
+        $states = collect(json_decode(file_get_contents(public_path("/assets/estados.json"))));
+        $cities = collect(json_decode(file_get_contents(public_path("/assets/municipios.json"))));
+
+        $citiesFinded = $cities->filter(function ($city) use ($value) {
+            return false !== stristr($city->name, $value);
+        });
+
+        $statesFinded = $states->filter(function ($state) use ($value) {
+            return false !== stristr($state->name, $value);
+        });
+
+        $sqlSearch = $query->where('name', 'LIKE', "%{$value}%")
+            ->orWhere('description', 'LIKE', "%{$value}%");
+
+        foreach ($statesFinded as $state) {
+            $sqlSearch->orWhere('state', 'LIKE', "%{$state->id}%");
+        }
+
+        foreach ($citiesFinded as $city) {
+            $sqlSearch->orWhere('city', 'LIKE', "%{$city->inegi_id}%");
+        }
+
+        return $sqlSearch;
+    }
+
     public function getStateObjAttribute()
     {
-        $states_json = collect(json_decode(file_get_contents(public_path("/assets/estados.json"))));
+        $states = collect(json_decode(file_get_contents(public_path("/assets/estados.json"))));
 
-        return $states_json->firstWhere('id', $this->state) ?? null;
+        return $states->firstWhere('id', $this->state) ?? null;
     }
 
     public function getCityObjAttribute()
     {
-        $cities_json = collect(json_decode(file_get_contents(public_path("/assets/municipios.json"))));
-        return $cities_json->firstWhere('inegi_id', $this->city) ?? null;
+        $cities = collect(json_decode(file_get_contents(public_path("/assets/municipios.json"))));
+        return $cities->firstWhere('inegi_id', $this->city) ?? null;
     }
 
     public function amenities()

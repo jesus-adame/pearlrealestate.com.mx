@@ -9,7 +9,12 @@ class PropertiesController extends Controller
 {
     public function index()
     {
-        $properties = Property::all();
+        $searchWord = request('search');
+
+        $properties = Property::orderByDesc('updated_at')
+            ->search($searchWord)
+            ->get();
+
         return view('properties.index', compact('properties'));
     }
 
