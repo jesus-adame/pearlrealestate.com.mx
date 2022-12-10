@@ -134,6 +134,7 @@ class PropertyController extends Controller
             'city'        => $request->city,
             'address'     => $request->address,
             'price'       => $request->price,
+            'property_status' => $request->property_status,
         ];
 
         $features = [
