@@ -22,7 +22,7 @@ class PropertyController extends Controller
     public function index()
     {
         $properties = Property::all();
-        
+
         return view('admin.properties.index', compact('properties'));
     }
 
@@ -56,6 +56,7 @@ class PropertyController extends Controller
             'address'     => $request->address,
             'price'       => $request->price,
             'image'       => $request->file('image')->store('properties'),
+            'property_status' => $request->property_status,
         ];
 
         $features = [
@@ -110,7 +111,7 @@ class PropertyController extends Controller
         $amenities = Amenity::all();
 
         $states_json = collect(json_decode(file_get_contents(public_path("/assets/estados.json"))));
-        
+
         return view('admin.properties.edit', compact('property', 'amenities'));
     }
 

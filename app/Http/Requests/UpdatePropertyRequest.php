@@ -38,6 +38,7 @@ class UpdatePropertyRequest extends FormRequest
             'building_meters' => 'required',
             'ground_meters' => 'required',
             'building_age'  => 'required',
+            'property_status' => 'required',
         ];
     }
 }

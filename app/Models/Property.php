@@ -22,6 +22,7 @@ class Property extends Model
         'address',
         'city',
         'features',
+        'property_status',
     ];
 
     public function getPriceAttribute($value)

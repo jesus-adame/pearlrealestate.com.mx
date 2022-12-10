@@ -36,8 +36,9 @@ class StorePropertyRequest extends FormRequest
             'cars'          => ['required', 'numeric'],
             'floors_number' => ['required', 'numeric'],
             'building_meters' => 'required',
-            'ground_meters' => 'required',
-            'building_age'  => 'required',
+            'ground_meters'  => 'required',
+            'building_age'   => 'required',
+            'property_status' => 'required',
         ];
     }
 }

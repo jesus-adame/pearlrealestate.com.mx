@@ -1,0 +1,23 @@
+{
+    "Whoops! Something went wrong.": "¡Ups! algo salió mal.",
+    "Properties": "Propiedades",
+    "Bathrooms": "Baños",
+    "Cars": "Carros",
+    "Bedrooms": "Habitaciones",
+    "Parking capacity": "Capacidad de autos",
+    "Floors number": "Número de pisos",
+    "Status": "Estatus",
+    "State": "Estado (provincia)",
+    "City": "Ciudad",
+    "Address": "Dirección",
+    "Price": "Precio",
+    "Select": "Seleccionar",
+    "Submit": "Enviar",
+    "Update": "Actualizar",
+    "Property name": "Nombre de la propiedad",
+    "Land size (m2)": "Tamaño del terreno (m2)",
+    "Build size (m2)": "Tamaño de la construcción (m2)",
+    "Amenities": "Amenidades",
+    "Building age": "Antigüedad del edificio",
+    "rent": "Renta"
+}

@@ -7,7 +7,7 @@
                 </figure>
                 <div class="py-6 px-8 rounded-lg bg-white">
                     <h1 class="font-bold text-2xl mb-2 hover:text-gray-800 hover:cursor-pointer hover:underline">
-                        <a class="block" href="{{ route('properties.show', [$property->id]) }}">{{ $property->name }}</a>
+                        <a class="inline-block" href="{{ route('properties.show', [$property->id]) }}">{{ $property->name }}</a>
                     </h1>
                     <div class="address flex items-center text-gray-500">
                         <figure class="w-3 mr-3">
@@ -15,15 +15,19 @@
                                 <path fill="currentColor" d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path>
                             </svg>
                         </figure>
-
-                        <p class="">
+                        <p>
                             {{ $property->cityObj->name ?? null }}, {{ $property->stateObj->name ?? null }}
                         </p>
                     </div>
-                    <p class="tracking-wide mt-4">
+                    @if ($property->property_status)
+                        <div class="bg-green-100 inline-block rounded-md p-2 ml-auto my-4 text-center uppercase text-green-700">
+                            <p><strong>{{ __($property->property_status) }}</strong></p>
+                        </div>
+                    @endif
+                    <p class="tracking-wide my-2">
                         {{ $property->description }}
                     </p>
-                    <div class="info font-semibold flex items-center justify-around mt-4 cursor-default">
+                    <div class="info font-semibold flex items-center justify-around mt-5 cursor-default">
                         <span class="w-20 bg-blue-100 items-center py-2 px-2 rounded-full justify-around flex">
                             {{ $property->bedrooms }} <img class="w-6 h-8 ml-1" src="/images/bed-solid.svg" alt="Beds">
                         </span>
