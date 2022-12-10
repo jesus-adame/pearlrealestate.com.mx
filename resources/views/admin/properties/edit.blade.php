@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <!-- Validation Errors -->
             <x-auth-validation-errors class="mb-4" :errors="$errors" />
-    
+
             <form method="POST" action="{{ route('admin.properties.update', $property->id) }}" enctype="multipart/form-data">
                 @csrf @method('put')
                 <div class="flex flex-wrap justify-between">
@@ -18,7 +18,7 @@
                             <x-label for="name" value="Titulo de propiedad" />
                             <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name', $property->name)" autofocus />
                         </div>
-                        
+
                         <div class="mt-4">
                             <x-label for="description" value="Descripción" />
                             <x-input id="description" class="block mt-1 w-full" type="text" name="description" :value="old('description', $property->description)" />
@@ -48,7 +48,7 @@
                             <label for="address">Dirección</label>
                             <x-input type="text" id="address" class="block mt-1 w-full border-gray-300 rounded-md" name="address" :value="old('address', $property->address)"/>
                         </div>
-        
+
                         <div class="mt-4">
                             <x-label for="price" value="Precio" />
                             <x-input id="price" class="block mt-1 w-full" type="text" name="price" :value="old('price', $property->price_value)" />
@@ -76,7 +76,7 @@
                                     type="text"
                                     name="toilets" :value="old('toilets', $property->toilets)"/>
                             </div>
-            
+
                             <div class="mt-4 w-1/2 mx-1">
                                 <x-label for="cars" value="Capacidad de autos" />
                                 <x-input id="cars" class="block mt-1 w-full"
@@ -91,7 +91,7 @@
                                     type="text"
                                     name="building_meters" :value="old('building_meters', $property->building_meters)"/>
                             </div>
-            
+
                             <div class="mt-4 w-1/2 mx-1">
                                 <x-label for="ground_meters" value="Métros cuadrados de terreno" />
                                 <x-input id="ground_meters" class="block mt-1 w-full"
@@ -122,7 +122,7 @@
                             </div>
                         </div>
                     </div>
-                </div>              
+                </div>
                 <div class="py-4">
                     <h3>Amenidades</h3>
                 </div>

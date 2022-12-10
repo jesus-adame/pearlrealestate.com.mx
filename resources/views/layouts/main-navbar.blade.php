@@ -20,7 +20,7 @@
                     <span class="sr-only">Open main menu</span>
                     <!--
                     Icon when menu is closed.
-        
+
                     Heroicon name: outline/menu
                     Menu open: "hidden", Menu closed: "block"
                     -->
@@ -31,7 +31,7 @@
                     </svg>
                     <!--
                     Icon when menu is open.
-        
+
                     Heroicon name: outline/x
                     Menu open: "block", Menu closed: "hidden"
                     -->

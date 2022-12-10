@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <!-- Validation Errors -->
             <x-auth-validation-errors class="mb-4" :errors="$errors" />
-    
+
             <form method="POST" action="{{ route('admin.properties.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="flex flex-wrap justify-between">
@@ -18,7 +18,7 @@
                             <x-label for="name" value="Nombre" />
                             <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" autofocus />
                         </div>
-                        
+
                         <div class="mt-4">
                             <x-label for="description" value="Descripción" />
                             <x-input id="description" class="block mt-1 w-full" type="text" name="description" :value="old('description')" />
@@ -42,7 +42,7 @@
                             <label for="address">Dirección</label>
                             <x-input type="text" id="address" class="block mt-1 w-full border-gray-300 rounded-md" name="address" :value="old('address')"/>
                         </div>
-        
+
                         <div class="mt-4">
                             <x-label for="price" value="Precio" />
                             <x-input id="price" class="block mt-1 w-full" type="text" name="price" :value="old('price')" />
@@ -65,7 +65,7 @@
                                     type="text"
                                     name="toilets" :value="old('toilets')"/>
                             </div>
-            
+
                             <div class="mt-4 w-1/2 mx-1">
                                 <x-label for="cars" value="Carros" />
                                 <x-input id="cars" class="block mt-1 w-full"
@@ -80,7 +80,7 @@
                                     type="text"
                                     name="building_meters" :value="old('building_meters')"/>
                             </div>
-            
+
                             <div class="mt-4 w-1/2 mx-1">
                                 <x-label for="ground_meters" value="Métros cuadrados de terreno" />
                                 <x-input id="ground_meters" class="block mt-1 w-full"
@@ -111,7 +111,7 @@
                             </div>
                         </div>
                     </div>
-                </div>              
+                </div>
                 <div class="py-4">
                     <h3>Amenidades</h3>
                 </div>
@@ -123,7 +123,7 @@
                         </div>
                     @endforeach
                 </div>
-    
+
                 <div class="flex items-center justify-end mt-4">
                     <x-button class="ml-4">
                         Registrar
