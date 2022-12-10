@@ -6,7 +6,7 @@
         <span class="font-bold block text-2xl mb-3">🍺 Beer, beer, beer </span>
         <!-- Some beer 🍺 -->
         <p class="mb-5">beer, beer, beer... beer, beer, beer... beer, beer, beer... beer, beer, beer...</p>
-        <p>beer, beer, beer... beer, beer, beer... beer, beer, beer... beer, beer, beer... beer, beer, beer... beer, beer, beer... beer, beer, beer...</p>
+        <p>beer, beer, beer... beer, beer... beer, beer, beer... beer, beer, beer... beer, beer, beer...</p>
 
         <!-- Buttons -->
         <div class="text-right space-x-5 mt-5">

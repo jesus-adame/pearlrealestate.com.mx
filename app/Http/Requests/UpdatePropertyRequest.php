@@ -31,13 +31,14 @@ class UpdatePropertyRequest extends FormRequest
             'address'       => 'required',
             'image'         => 'nullable',
             'price'         => 'required|numeric|max:9999999999',
-            'toilets'       => 'required|numeric',
-            'bedrooms'      => 'required|numeric',
-            'cars'          => 'required|numeric',
-            'floors_number' => 'required|numeric',
+            'toilets'       => ['required', 'numeric'],
+            'bedrooms'      => ['required', 'numeric'],
+            'cars'          => ['required', 'numeric'],
+            'floors_number' => ['required', 'numeric'],
             'building_meters' => 'required',
             'ground_meters' => 'required',
             'building_age'  => 'required',
+            'property_status' => 'required',
         ];
     }
 }

@@ -7,7 +7,7 @@
                         <img class="w-full" src="/storage/{{ $property->image }}" alt="{{ $property->name }}">
                     </figure>
                 </div>
-                
+
                 <div class="w-full lg:w-1/2 px-4 md:px-10">
                     <div class="content sm:rounded-md overflow-hidden border-2 border-gray-200">
                         <div class="card-header flex justify-between p-5 border-b-2 border-gray-200">
@@ -33,6 +33,11 @@
                         <div class="bg-white p-6">
                             <h3 class="pb-5">Descripción</h3>
                             <div class="font-semibold rounded-md p-4 border-2 border-gray-200">
+                                @if ($property->property_status)
+                                    <div class="bg-green-100 rounded-md p-2 mb-4 text-center uppercase text-green-700">
+                                        <p>{{ __($property->property_status) }}</p>
+                                    </div>
+                                @endif
                                 <p>
                                     {{ $property->description }}
                                 </p>
