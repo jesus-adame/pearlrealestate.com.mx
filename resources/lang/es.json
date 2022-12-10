@@ -19,5 +19,7 @@
     "Build size (m2)": "Tamaño de la construcción (m2)",
     "Amenities": "Amenidades",
     "Building age": "Antigüedad del edificio",
-    "rent": "Renta"
+    "rent": "Renta",
+    "sale": "Venta",
+    "vacational_rent": "Renta Vacacional"
 }
