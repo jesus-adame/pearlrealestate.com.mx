@@ -1,3 +1,5 @@
+@section('title', "Inicio")
+
 <x-guest-layout>
     @include('layouts.carousel')
     <div class="relative z-10

@@ -1,3 +1,5 @@
+@section('title', "Propiedaes")
+
 <x-guest-layout>
     <div class="container mx-auto pt-28">
         <section class="py-5 px-4 rounded border shadow border-gray-300 mb-5">
