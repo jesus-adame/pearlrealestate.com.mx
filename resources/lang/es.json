@@ -13,7 +13,10 @@
     "Price": "Precio",
     "Select": "Seleccionar",
     "Submit": "Enviar",
+    "Register": "Registrar",
     "Update": "Actualizar",
+    "Edit": "Editar",
+    "Delete": "Eliminar",
     "Property name": "Nombre de la propiedad",
     "Land size (m2)": "Tamaño del terreno (m2)",
     "Build size (m2)": "Tamaño de la construcción (m2)",
@@ -23,5 +26,15 @@
     "sale": "Venta",
     "vacational_rent": "Renta Vacacional",
     "Add image": "Agregar imágenes",
-    "Images": "Imágenes"
+    "Dashboard": "Control panel",
+    "Users": "Usuarios",
+    "Name": "Nombre",
+    "Last name": "Apellido",
+    "Email": "Correo",
+    "Images": "Imágenes",
+    "Back to the site": "Volver al sitio",
+    "Back": "Volver",
+    "Log out": "Cerrar sesión",
+    "Edit owner": "Editar propietario",
+    "You're logged in!": "¡Has iniciado sesión!"
 }

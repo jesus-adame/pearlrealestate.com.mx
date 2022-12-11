@@ -5,22 +5,26 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a class="w-16" href="{{ route('dashboard') }}">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex capitalize">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('admin.properties.index')"
                         :active="request()->routeIs('admin.properties.index')">
-                        {{ __('Propiedades') }}
+                        {{ __('Properties') }}
                     </x-nav-link>
                     <x-nav-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.index')">
-                        {{ __('Usuarios') }}
+                        {{ __('Users') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin.amenities.index')"
+                        :active="request()->routeIs('admin.amenities.index')">
+                        {{ __('Amenities') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -49,11 +53,11 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <x-dropdown-link :href="route('home.index')">
-                                Volver al sitio
+                                {{ __('Back to the site') }}
                             </x-dropdown-link>
                             <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Log out') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -84,10 +88,10 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.properties.index')"
                 :active="request()->routeIs('admin.properties.index')">
-                {{ __('Propiedades') }}
+                {{ __('Properties') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.index')">
-                {{ __('Usuarios') }}
+                {{ __('Users') }}
             </x-responsive-nav-link>
         </div>
 
@@ -104,12 +108,12 @@
                     @csrf
 
                     <x-responsive-nav-link :href="route('home.index')">
-                        Volver al sitio
+                        {{ __('Back to the site') }}
                     </x-responsive-nav-link>
 
                     <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Log out') }}
                     </x-responsive-nav-link>
                 </form>
             </div>

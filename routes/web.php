@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\PropertiesController;
 use App\Http\Controllers\Admin\OwnerController;
+use App\Http\Controllers\Admin\AmenityController;
 use App\Http\Controllers\Admin\PropertyController;
 
 /*
@@ -62,6 +63,11 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     Route::get('/owners/{owner}/edit', [ OwnerController::class, 'edit' ])->name('owners.edit');
     Route::put('/owners/{owner}', [ OwnerController::class, 'update' ])->name('owners.update');
     Route::delete('/owners/{owner}', [ OwnerController::class, 'destroy' ])->name('owners.destroy');
+
+    Route::get('/amenities', [ AmenityController::class, 'index' ])->name('amenities.index');
+    Route::get('/amenities/create', [ AmenityController::class, 'create' ])->name('amenities.create');
+    Route::post('/amenities', [ AmenityController::class, 'store' ])->name('amenities.store');
+    Route::delete('/amenities/{amenity}', [ AmenityController::class, 'destroy' ])->name('amenities.destroy');
 
     Route::get('/users', [ UserController::class, 'index' ])->name('users.index');
     Route::get('/users/create', [ UserController::class, 'create' ])->name('users.create');
