@@ -67,3 +67,27 @@ h3 {
 .border-theme {
     border-color: var(--main-bg-color);
 }
+
+.btn {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    transition-duration: 300ms;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+}
+
+.btn-primary {
+    color: var(--main-text-color);
+    background-color: var(--main-bg-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--hover-text-color);
+}

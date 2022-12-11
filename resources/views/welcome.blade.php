@@ -22,7 +22,8 @@
                 <img class="h-8 w-full" src="/images/tags-solid.svg" alt="Workflow">
                 <h3 class="mt-2">Compra</h3>
                 <p class="mt-5 px-2">
-                    Busca las Mejores opciones para compra de casas en todo México. ¡Estamos actualizando diariamente nuestras bases de datos!
+                    Busca las Mejores opciones para compra de casas en todo México.
+                    ¡Estamos actualizando diariamente nuestras bases de datos!
                 </p>
                 <x-nav-link class="mt-5" href="{{ route('properties.index') }}">Ver información</x-nav-link>
             </div>
@@ -42,7 +43,7 @@
 
             <p class="text-center my-10">
                 Somos una empresa dedicada en vender mas que solo metros cuadrados, nos enfocamos en darte la mejor
-                opción en distribución arquitectónica, según sea sus distintas necesidades
+                opción en distribución arquitectónica, según sea sus distintas necesidades.
             </p>
         </div>
     </section>

@@ -4,9 +4,9 @@
     <div class="container mx-auto pt-28">
         <section class="py-5 px-4 rounded border shadow border-gray-300 mb-5">
             <div class="flex justify-between">
-                <h1 class="text-gray-700">Propiedades</h1>
+                <h1 class="text-gray-700">{{ __('Properties') }}</h1>
                 <form class="flex items-center" action="{{ route('properties.index') }}">
-                    <input class="border-gray-300" type="text" name="search" id="search" placeholder="Buscar...">
+                    <input class="border-gray-300" type="text" name="search" placeholder="{{ __('Search') }}...">
                     <button type="submit">
                         <figure class="w-6 -ml-10">
                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search w-full" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
