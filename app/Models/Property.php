@@ -134,8 +134,8 @@ class Property extends Model
         return $this->belongsToMany(Amenity::class);
     }
 
-    public function properties(): BelongsToMany
+    public function images(): BelongsToMany
     {
-        return $this->belongsToMany(Property::class)->using(PorpertyImage::class);
+        return $this->belongsToMany(Image::class);
     }
 }

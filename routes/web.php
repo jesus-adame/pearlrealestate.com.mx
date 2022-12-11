@@ -40,6 +40,11 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     Route::put('/properties/{property}',      [ PropertyController::class, 'update' ])->name('properties.update');
     Route::delete('/properties/{property}',   [ PropertyController::class, 'destroy' ])->name('properties.destroy');
 
+    Route::get('/property/{property}/images', [ PropertyController::class, 'showPropertyImages' ])->name('property.images');
+    Route::post('/property/{property}/images', [ PropertyController::class, 'addImage' ])->name('property.add-image');
+    Route::put('/property/{property}/images/{imageId}', [ PropertyController::class, 'removeImage' ])
+        ->name('property.remove-image');
+
     Route::get('/users',             [ UserController::class, 'index' ])    ->name('users.index');
     Route::get('/users/create',      [ UserController::class, 'create' ])   ->name('users.create');
     Route::post('/users',            [ UserController::class, 'store' ])    ->name('users.store');

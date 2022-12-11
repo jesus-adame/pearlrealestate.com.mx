@@ -3,9 +3,25 @@
         <section class="pt-28 container mx-auto">
             <div class="flex flex-wrap w-full justify-between">
                 <div class="w-full lg:pl-10 lg:w-1/2 mx-auto">
-                    <figure class="lg:rounded-md overflow-hidden mb-5">
-                        <img class="w-full" src="/storage/{{ $property->image }}" alt="{{ $property->name }}">
-                    </figure>
+                    <a data-fslightbox href="/storage/{{ $property->image }}">
+                        <figure class="lg:rounded-md overflow-hidden mb-5">
+                            <img class="w-full" src="/storage/{{ $property->image }}" alt="{{ $property->name }}">
+                        </figure>
+                    </a>
+                    <div>
+                        <h4 class="font-bold">{{ __('More images') }}</h4>
+                        <ul class="flex flex-wrap w-full">
+                            @foreach ($property->images as $image)
+                                <li class="w-1/4 p-4">
+                                    <a href="/storage/{{ $image->path }}" data-fslightbox>
+                                        <figure>
+                                            <img class="w-full" src="/storage/{{ $image->path }}" alt="{{ $image->name }}">
+                                        </figure>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="w-full lg:w-1/2 px-4 md:px-10">
@@ -112,7 +128,7 @@
                 </div>
             </div>
         </section>
-        <section class="container mx-auto my-40" id="properties">
+        <section class="container mx-auto my-10" id="properties">
             <h3 class="mb-5 text-3xl">Populares</h3>
             @include('layouts.properties-card')
         </section>

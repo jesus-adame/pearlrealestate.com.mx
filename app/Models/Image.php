@@ -19,6 +19,6 @@ class Image extends Model
 
     public function properties(): BelongsToMany
     {
-        return $this->belongsToMany(Property::class)->using(PropertyImage::class);
+        return $this->belongsToMany(Property::class);
     }
 }

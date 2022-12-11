@@ -10,7 +10,9 @@ use App\Http\Requests\StorePropertyRequest;
 use App\Http\Requests\UpdatePropertyRequest;
 use App\Models\Amenity;
 use App\Models\AmenityProperty;
+use App\Models\Image;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class PropertyController extends Controller
 {
@@ -98,6 +100,51 @@ class PropertyController extends Controller
     public function show($id)
     {
         return view('admin.properties.show');
+    }
+
+    public function showPropertyImages(Property $property)
+    {
+        return view('admin.properties.property-images', compact('property'));
+    }
+
+    public function addImage(Request $request, Property $property)
+    {
+        $request->validate([
+            'image' => [ 'required', 'file', 'image' ]
+        ]);
+
+        /** @var \Illuminate\Http\UploadedFile */
+        $imageFile = $request->file('image');
+
+        // Store image in the server
+        $imagePath = $imageFile->store('properties');
+
+        // Create image
+        $imageDTO = [
+            'slug' => $imageFile->getClientOriginalName(),
+            'name' => $imageFile->getClientOriginalName(),
+            'path' => $imagePath,
+        ];
+
+        /** @var Image */
+        $image = new Image($imageDTO);
+
+        $property->images()->save($image);
+
+        return redirect()
+            ->route('admin.property.images', [ $property->id ])
+            ->with('success', 'Resgistrado correctamente')
+        ;
+    }
+
+    public function removeImage(Property $property, $imageId)
+    {
+        $property->images()->detach($imageId);
+
+        return redirect()
+            ->route('admin.property.images', [ $property->id ])
+            ->with('success', 'Resgistrado correctamente')
+        ;
     }
 
     /**
