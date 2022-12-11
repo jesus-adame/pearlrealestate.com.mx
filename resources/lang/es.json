@@ -34,7 +34,19 @@
     "Images": "Imágenes",
     "Back to the site": "Volver al sitio",
     "Back": "Volver",
+    "Log in": "Iniciar sesión",
     "Log out": "Cerrar sesión",
     "Edit owner": "Editar propietario",
-    "You're logged in!": "¡Has iniciado sesión!"
+    "You're logged in!": "¡Has iniciado sesión!",
+    "Send message": "Enviar mensaje",
+    "Phone number": "Número telefónico",
+    "Message": "Mensaje",
+    "Password": "Contraseña",
+    "Confirm Password": "Confirmar contraseña",
+    "Remember me": "Recuerdame",
+    "Already registered?": "¿Ya estás registrado?",
+    "Reset Password": "Resetear contraseña",
+    "Forgot your password?": "¿Olvidaste tu contraseña?",
+    "Resend Verification Email": "Reenviar verificación de correo",
+    "Search": "Buscar"
 }

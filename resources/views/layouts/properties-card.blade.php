@@ -2,14 +2,16 @@
     @foreach ($properties as $property)
         <div class="sm:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4 py-25">
             <div class="bg-white relative shadow hover:shadow-xl transition duration-500 rounded-lg">
-                <a class="inline-block" href="{{ route('properties.show', [$property->id]) }}">
+                <a class="inline-block" href="{{ route('properties.show', $property->id) }}">
                     <figure class="rounded-t-lg overflow-hidden">
                         <img class="w-full" src="{{ asset('/storage/' . $property->image) }}" alt="{{ $property->name }}"/>
                     </figure>
                 </a>
                 <div class="py-6 px-8 rounded-lg bg-white">
                     <h1 class="font-bold text-2xl mb-2 hover:text-gray-800 hover:cursor-pointer hover:underline">
-                        <a class="inline-block" href="{{ route('properties.show', [$property->id]) }}">{{ $property->name }}</a>
+                        <a class="inline-block" href="{{ route('properties.show', $property->id) }}">
+                            {{ $property->name }}
+                        </a>
                     </h1>
                     <div class="address flex items-center text-gray-500">
                         <figure class="w-3 mr-3">
@@ -45,7 +47,7 @@
                     </div>
                     <a href="https://wa.me/message/3QS5VGTW5WFHH1"
                         target="_blank"
-                        class="mt-6 block py-2 px-4 text-sm bg-theme hover:bg-theme text-center text-theme hover:text-theme font-bold rounded-md shadow-md hover:shadow-lg transition duration-300">
+                        class="mt-6 btn btn-primary">
                         <span class="flex justify-center items-center">
                             <figure class="w-5 mr-2">
                                 <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="whatsapp" class="svg-inline--fa fa-whatsapp w-100" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -57,7 +59,7 @@
                     </a>
                     <a href="https://m.me/pearlrealstate"
                         target="_blank"
-                        class="mt-6 block py-2 px-4 text-sm bg-theme hover:bg-theme text-center text-theme hover:text-theme font-bold rounded-md shadow-md hover:shadow-lg transition duration-300">
+                        class="btn btn-primary mt-5">
                         <span class="flex justify-center items-center">
                             <figure class="w-5 mr-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

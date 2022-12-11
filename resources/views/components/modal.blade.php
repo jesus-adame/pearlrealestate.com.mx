@@ -12,7 +12,7 @@
         <div class="text-right space-x-5 mt-5">
             <button @click="showModal = !showModal"
                 class="px-4 py-2 text-sm bg-white rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-500 focus:outline-none focus:ring-0 font-bold hover:bg-gray-50 focus:bg-indigo-50 focus:text-indigo">
-                Cancel
+                {{ __('Cancel') }}
             </button>
             <a href="https://www.buymeacoffee.com/fricki"
                 target="_blank"

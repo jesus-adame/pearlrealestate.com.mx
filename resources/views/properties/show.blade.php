@@ -121,7 +121,7 @@
 
                             <a href="https://wa.me/message/3QS5VGTW5WFHH1"
                                 target="_blank"
-                                class="mt-6 block py-2 px-4 bg-theme text-theme hover:bg-theme hover:text-theme text-center font-bold rounded-md shadow-md hover:shadow-lg transition duration-300">
+                                class="mt-6 btn btn-primary">
                                 <span class="flex justify-center">
                                     <figure class="w-5 mr-2">
                                         <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="whatsapp" class="svg-inline--fa fa-whatsapp w-100" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -133,7 +133,7 @@
                             </a>
                             <a href="https://m.me/pearlrealstate"
                                 target="_blank"
-                                class="mt-6 block py-2 px-4 bg-theme text-theme hover:bg-theme hover:text-theme text-center font-bold rounded-md shadow-md hover:shadow-lg transition duration-300">
+                                class="mt-6 btn btn-primary">
                                 <span class="flex justify-center">
                                     <figure class="w-5 mr-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
