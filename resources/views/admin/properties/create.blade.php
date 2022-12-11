@@ -16,36 +16,67 @@
                     <div class="w-full md:w-1/2 px-2">
                         <div>
                             <x-label for="name" :value="__('Name')" />
-                            <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" autofocus />
+                            <x-input
+                                id="name"
+                                class="block mt-1 w-full"
+                                type="text"
+                                name="name"
+                                :value="old('name')"
+                                autofocus
+                            />
                         </div>
 
                         <div class="mt-4">
                             <x-label for="description" :value="__('Description')" />
-                            <x-input id="description" class="block mt-1 w-full" type="text" name="description" :value="old('description')" />
+                            <x-input
+                                id="description"
+                                class="block mt-1 w-full"
+                                type="text"
+                                name="description"
+                                :value="old('description')"
+                            />
                         </div>
 
                         <div class="mt-4">
                             <x-label for="state" :value="__('State')" />
-                            <select id="state" class="block mt-1 w-full border-gray-300 rounded-md select-states" name="state">
+                            <select
+                                id="state"
+                                class="block mt-1 w-full border-gray-300 rounded-md select-states"
+                                name="state">
                                 <option value="">- {{ __('Select') }} -</option>
                             </select>
                         </div>
 
                         <div class="mt-4">
                             <x-label for="city" :value="__('City')" />
-                            <select id="city" class="block mt-1 w-full border-gray-300 rounded-md select-cities" name="city">
+                            <select
+                                id="city"
+                                class="block mt-1 w-full border-gray-300 rounded-md select-cities"
+                                name="city">
                                 <option value="">- {{ __('Select') }} -</option>
                             </select>
                         </div>
 
                         <div class="mt-4">
                             <x-label for="address" :value="__('Address')" />
-                            <x-input type="text" id="address" class="block mt-1 w-full border-gray-300 rounded-md" name="address" :value="old('address')"/>
+                            <x-input
+                                type="text"
+                                id="address"
+                                class="block mt-1 w-full border-gray-300 rounded-md"
+                                name="address"
+                                :value="old('address')"
+                            />
                         </div>
 
                         <div class="mt-4">
                             <x-label for="price" :value="__('Price')" />
-                            <x-input id="price" class="block mt-1 w-full" type="number" name="price" :value="old('price')" />
+                            <x-input
+                                id="price"
+                                class="block mt-1 w-full"
+                                type="number"
+                                name="price"
+                                :value="old('price')"
+                            />
                         </div>
                     </div>
 
@@ -70,7 +101,8 @@
                                 <x-label for="cars" :value="__('Parking capacity')" />
                                 <x-input id="cars" class="block mt-1 w-full"
                                     type="text"
-                                    name="cars" :value="old('cars')"/>
+                                    name="cars"
+                                    :value="old('cars')"/>
                             </div>
                         </div>
                         <div class="flex w-full">
@@ -113,7 +145,8 @@
                         <div class="flex w-full">
                             <div class="mt-4 w-1/2">
                                 <x-label for="property_status" :value="__('Status')" />
-                                <select id="property_status"
+                                <select
+                                    id="property_status"
                                     class="block mt-1 w-full border-gray-300 rounded-md"
                                     name="property_status"
                                 >

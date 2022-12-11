@@ -7,8 +7,8 @@
                 <div class="flex flex-col">
                     <span class="font-bold text-gray-300 uppercase mb-2">Social Media</span>
                     <span class="my-2"><a href="https://www.facebook.com/pearlrealstate" class="text-gray-400 text-md hover:text-gray-500">Facebook</a></span>
-                    <span class="my-2"><a href="https://wa.me/+527775335652" class="text-gray-400 text-md hover:text-gray-500">WhatsApp</a></span>
-                    <span class="my-2"><a href="mailto:contacto@pearlrealestate.com.mx" class="text-gray-400 text-md hover:text-gray-500">Email</a></span>
+                    <span class="my-2"><a href="https://wa.me/message/3QS5VGTW5WFHH1" class="text-gray-400 text-md hover:text-gray-500">WhatsApp</a></span>
+                    <span class="my-2"><a href="mailto:admin@pearlrealestate.com.mx" class="text-gray-400 text-md hover:text-gray-500">Email</a></span>
                 </div>
                 <div class="flex flex-col">
                     <span class="font-bold text-gray-300 uppercase mt-4 md:mt-0 mb-2">Términos y condiciones</span>

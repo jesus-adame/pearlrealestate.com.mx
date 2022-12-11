@@ -138,4 +138,9 @@ class Property extends Model
     {
         return $this->belongsToMany(Image::class);
     }
+
+    public function owner()
+    {
+        return $this->belongsTo(Owner::class);
+    }
 }

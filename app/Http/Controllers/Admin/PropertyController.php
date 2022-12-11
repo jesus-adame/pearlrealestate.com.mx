@@ -11,6 +11,7 @@ use App\Http\Requests\UpdatePropertyRequest;
 use App\Models\Amenity;
 use App\Models\AmenityProperty;
 use App\Models\Image;
+use App\Models\Owner;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
@@ -88,7 +89,7 @@ class PropertyController extends Controller
 
         return redirect()
             ->route('admin.properties.index')
-            ->with('success', 'Resgistrado correctamente');
+            ->with('success', 'Registrado correctamente');
     }
 
     /**
@@ -133,7 +134,7 @@ class PropertyController extends Controller
 
         return redirect()
             ->route('admin.property.images', [ $property->id ])
-            ->with('success', 'Resgistrado correctamente')
+            ->with('success', 'Agregada correctamente')
         ;
     }
 
@@ -143,7 +144,53 @@ class PropertyController extends Controller
 
         return redirect()
             ->route('admin.property.images', [ $property->id ])
-            ->with('success', 'Resgistrado correctamente')
+            ->with('success', 'Removida correctamente')
+        ;
+    }
+
+    public function createOwner(Property $property)
+    {
+        return view('admin.properties.create-owner', compact('property'));
+    }
+
+    public function addOwner(Request $request, Property $property)
+    {
+        $request->validate([
+            'name'      => [ 'required', 'min:3', 'max:25' ],
+            'last_name' => [ 'required', 'min:3', 'max:25' ],
+            'last_name_second' => [ 'nullable', 'min:3', 'max:255' ],
+            'phone_number' => [ 'required', 'min:10', 'max:17' ],
+            'email'     => [ 'nullable', 'email', 'max:255' ],
+        ]);
+
+        $ownerDTO = $request->only([
+            'name',
+            'last_name',
+            'last_name_second',
+            'phone_number',
+            'email',
+        ]);
+
+        $owner = new Owner($ownerDTO);
+        $owner->save();
+
+        $property->owner()->associate($owner);
+        $property->save();
+
+        return redirect()
+            ->route('admin.properties.index')
+            ->with('success', 'Agregado correctamente')
+        ;
+    }
+
+    public function removeOwner(Property $property)
+    {
+        $property->owner()->dissociate();
+        $property->save();
+
+        return redirect()
+            ->route('admin.properties.index')
+            ->with('success', 'Removido correctamente')
         ;
     }
 
