@@ -91,3 +91,7 @@ h3 {
     background-color: var(--hover-bg-color);
     color: var(--hover-text-color);
 }
+
+.zoom-in {
+    cursor: zoom-in;
+}
