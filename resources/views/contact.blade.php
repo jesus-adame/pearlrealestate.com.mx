@@ -76,6 +76,8 @@
 </x-guest-layout>
 
 @push('scripts')
+    {{-- Recaptcha --}}
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
         function onSubmit(token) {
             document.getElementById("contact-form").submit();
