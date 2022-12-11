@@ -22,7 +22,10 @@
                         </p>
                     </div>
                     @if ($property->property_status)
-                        <div class="bg-green-100 inline-block rounded-md p-2 ml-auto my-4 text-center uppercase text-green-700">
+                        @php
+                            $color = $property->property_status == 'rent' ? 'yellow' : 'green';
+                        @endphp
+                        <div class="bg-{{ $color }}-500 text-{{ $color }}-50 inline-block rounded-md p-2 ml-auto my-4 text-center uppercase">
                             <p><strong>{{ __($property->property_status) }}</strong></p>
                         </div>
                     @endif
@@ -53,8 +56,8 @@
                         </span>
                     </a>
                 </div>
-                <div class="absolute top-2 right-2 py-1 px-3 bg-green-100 rounded-lg shadow cursor-default">
-                    <span class="text-md text-green-800 font-semibold">{{ $property->price }} MXN</span>
+                <div class="absolute top-2 right-2 py-1 px-3 bg-green-800 rounded-lg shadow cursor-default">
+                    <span class="text-md text-green-50 font-semibold">{{ $property->price }} MXN</span>
                 </div>
             </div>
         </div>
