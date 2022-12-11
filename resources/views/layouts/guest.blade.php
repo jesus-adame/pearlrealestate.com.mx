@@ -23,8 +23,6 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
-
-        @stack('scripts')
     </head>
     <body class="h-full">
         <!-- Messenger Plugin de chat Code -->
@@ -71,5 +69,6 @@
         <noscript><iframe title="tagmanager" src="https://www.googletagmanager.com/ns.html?id=GTM-KFD26M7"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
+        @stack('scripts')
     </body>
 </html>
