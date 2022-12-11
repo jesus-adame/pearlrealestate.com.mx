@@ -12,7 +12,10 @@
                     <!-- Validation Errors -->
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-                    <form method="post" action="{{ route('admin.property.add-image', $property->id) }}" enctype="multipart/form-data">
+                    <form method="post"
+                        action="{{ route('admin.property.add-image', $property->id) }}"
+                        enctype="multipart/form-data"
+                    >
                         @csrf @method('post')
                         <div class="flex flex-wrap justify-between">
                             <div>
