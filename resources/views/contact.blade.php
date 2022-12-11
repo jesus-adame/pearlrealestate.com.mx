@@ -75,11 +75,10 @@
     </div>
 </x-guest-layout>
 
-@push ('scripts')
-<script>
-    function onSubmit(token) {
-        console.log('entra');
-        document.getElementById("contact-form").submit();
-    }
-</script>
+@push('scripts')
+    <script>
+        function onSubmit(token) {
+            document.getElementById("contact-form").submit();
+        }
+    </script>
 @endpush
