@@ -24,6 +24,12 @@ class PropertiesController extends Controller
             ->limit(4)
             ->get();
 
-        return view('properties.show', compact('property', 'properties'));
+        $statusColor = 'green';
+
+        if ($property->property_status == 'rent'):
+            $statusColor = 'yellow';
+        endif;
+
+        return view('properties.show', compact('property', 'properties', 'statusColor'));
     }
 }

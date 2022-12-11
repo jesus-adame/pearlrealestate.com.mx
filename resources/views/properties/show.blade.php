@@ -50,7 +50,7 @@
                             <h3 class="pb-5">Descripción</h3>
                             <div class="font-semibold rounded-md p-4 border-2 border-gray-200">
                                 @if ($property->property_status)
-                                    <div class="bg-green-100 rounded-md p-2 mb-4 text-center uppercase text-green-700">
+                                    <div class="bg-{{ $statusColor }}-500 rounded-md p-2 mb-4 text-center uppercase text-{{ $statusColor }}-50">
                                         <p>{{ __($property->property_status) }}</p>
                                     </div>
                                 @endif
