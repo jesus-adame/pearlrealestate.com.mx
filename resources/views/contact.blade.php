@@ -1,3 +1,5 @@
+@section('title', "Contacto")
+
 <x-guest-layout>
     <div class="container mx-auto pt-20">
         <div class="max-w-screen-xl px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto text-gray-900 rounded-lg">
@@ -15,42 +17,50 @@
                 </div>
             </div>
             <form id="contact-form" action="{{ route('contact.send') }}"
-                method="POST" class="">
-                @csrf
+                method="POST">
+                @csrf @method('post')
                 <!-- Session Status -->
                 <x-auth-session-status class="mb-4" :status="session('status')" />
+
+                @if (session()->has('success'))
+                    <div class="text-green-800 bg-green-200 p-4 mb-5">
+                        <p>{{ session()->get('success') }}</p>
+                    </div>
+                @endif
+
+                <!-- Validation Errors -->
+                <x-auth-validation-errors class="my-4" :errors="$errors" />
 
                 <div>
                     <span class="uppercase text-sm text-gray-600 font-bold">Nombre *</span>
                     <input
                         name="name"
                         class="w-full border-gray-300 bg-gray-100 text-gray-900 mt-2 p-3 rounded-md"
-                        type="text" autofocus placeholder="">
+                        type="text" autofocus value="{{ old('name') }}">
                 </div>
                 <div class="mt-8">
                     <span class="uppercase text-sm text-gray-600 font-bold">Email *</span>
                     <input
                         name="email"
                         class="w-full border-gray-300 bg-gray-100 text-gray-900 mt-2 p-3 rounded-md"
-                        type="email">
+                        type="email"
+                        value="{{ old('email') }}">
                 </div>
                 <div class="mt-8">
                     <span class="uppercase text-sm text-gray-600 font-bold">Teléfono *</span>
                     <input
                         name="phone_number"
                         class="w-full border-gray-300 bg-gray-100 text-gray-900 mt-2 p-3 rounded-md"
-                        type="text">
+                        type="text"
+                        value="{{ old('phone_number') }}">
                 </div>
                 <div class="mt-8">
-                    <span class="uppercase text-sm text-gray-600 font-bold">Mensaje *</span>
+                    <span class="uppercase text-sm text-gray-600 font-bold">Mensaje</span>
                     <textarea
                         name="message"
                         class="w-full border-gray-300 h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-md"></textarea>
                 </div>
                 <div class="mt-8">
-                    <!-- Validation Errors -->
-                    <x-auth-validation-errors class="my-4" :errors="$errors" />
-
                     <button
                         type="submit"
                         class="uppercase text-sm font-bold tracking-wide bg-theme hover:bg-theme text-theme p-3 rounded-md w-full transition duration-200 ease-in-out">

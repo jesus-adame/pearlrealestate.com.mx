@@ -1,3 +1,5 @@
+@section('title', $property->name)
+
 <x-guest-layout>
     <div class="container mx-auto">
         <section class="pt-28 container mx-auto">
