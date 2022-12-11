@@ -40,12 +40,12 @@
                                         >
                                     </td>
                                     <td class="text-center">{{ $property->slug }}</td>
-                                    <td class="text-left">{{ $property->name }}</td>
+                                    <td class="text-center">{{ $property->name }}</td>
                                     <td class="text-center">{{ $property->description }}</td>
                                     <td class="text-right">{{ $property->price }}</td>
                                     <td class="text-right">
                                         @if ($property->owner)
-                                            <a class="text-blue-500"
+                                            <a class="w-30 my-1 rounded text-white py-2 px-2 inline-block bg-yellow-500"
                                                 href="{{ route('admin.owners.edit', $property->owner->id) }}"
                                             >
                                                 {{ $property->owner->name }}
@@ -59,14 +59,14 @@
                                         @endif
                                     </td>
                                     <td class="text-center">
-                                        <a class="text-blue-500"
+                                        <a class="w-30 my-1 rounded text-white py-2 px-2 inline-block bg-yellow-500"
                                             href="{{ route('admin.property.images', $property->id) }}">
                                             Ver imágenes
                                         </a>
                                     </td>
                                     <td class="text-center">
                                         <a
-                                            class="w-20 my-1 rounded py-1 inline-block bg-yellow-300"
+                                            class="w-20 my-1 rounded py-1 text-white inline-block bg-yellow-500"
                                             href="{{ route('admin.properties.edit', $property->id) }}"
                                         >
                                             Editar
@@ -77,7 +77,7 @@
                                         >
                                             @csrf @method('delete')
                                             <button
-                                                class="py-1 my-1 w-20 bg-gray-900 text-white inline-block rounded"
+                                                class="py-1 my-1 w-20 bg-red-700 text-white inline-block rounded"
                                                 type="submit"
                                             >
                                                 Eliminar

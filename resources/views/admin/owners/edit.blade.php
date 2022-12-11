@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 px-2 lg:px-8">
             <div class="bg-white overflow-auto shadow-sm sm:rounded-md">
                 <div class="bg-white border-b border-gray-200 p-4">
-                    <h2>Editar propietario</h2>
+                    <h2 class="capitalize">{{ __('Edit owner') }}</h2>
                     <x-auth-validation-errors class="my-5" :errors="$errors" />
                     <form
                         class="mt-4"
@@ -84,7 +84,7 @@
                                     <a
                                         href="{{ url()->previous() }}"
                                         class="text-white py-1 px-5 mt-5 bg-gray-600 hover:bg-gray-800 ml-2">
-                                        Volver
+                                        {{ __('Back') }}
                                     </a>
                                 </div>
                             </div>
