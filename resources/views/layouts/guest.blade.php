@@ -27,7 +27,7 @@
         @stack('scripts')
     </head>
     <body class="h-full">
-    <!-- Messenger Plugin de chat Code -->
+        <!-- Messenger Plugin de chat Code -->
     <div id="fb-root"></div>
 
     <!-- Your Plugin de chat code -->
