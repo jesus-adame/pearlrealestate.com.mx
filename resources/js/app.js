@@ -2,6 +2,8 @@ require('./bootstrap');
 
 require('alpinejs');
 
+require("fslightbox");
+
 $(function() {
     $('.select2').select2({
         width: 'resolve'

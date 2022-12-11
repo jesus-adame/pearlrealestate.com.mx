@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Property extends Model
@@ -128,8 +129,13 @@ class Property extends Model
         return $cities->firstWhere('inegi_id', $this->city) ?? null;
     }
 
-    public function amenities()
+    public function amenities(): BelongsToMany
     {
         return $this->belongsToMany(Amenity::class);
+    }
+
+    public function images(): BelongsToMany
+    {
+        return $this->belongsToMany(Image::class);
     }
 }
