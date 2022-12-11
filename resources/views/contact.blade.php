@@ -63,7 +63,10 @@
                 <div class="mt-8">
                     <button
                         type="submit"
-                        class="uppercase text-sm font-bold tracking-wide bg-theme hover:bg-theme text-theme p-3 rounded-md w-full transition duration-200 ease-in-out">
+                        data-sitekey="6Ldwt3AjAAAAABqaJVX8YmX_jW6XZ3o05U750PwK"
+                        data-callback='onSubmit'
+                        data-action='submit'
+                        class="g-recaptcha uppercase text-sm font-bold tracking-wide bg-theme hover:bg-theme text-theme p-3 rounded-md w-full transition duration-200 ease-in-out">
                         Enviar mensaje
                     </button>
                 </div>
@@ -71,3 +74,12 @@
         </div>
     </div>
 </x-guest-layout>
+
+@push ('scripts')
+<script>
+    function onSubmit(token) {
+        console.log('entra');
+        document.getElementById("contact-form").submit();
+    }
+</script>
+@endpush

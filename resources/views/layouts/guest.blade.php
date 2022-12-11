@@ -64,6 +64,9 @@
             @include('layouts.footer')
         </div>
 
+        {{-- Recaptcha --}}
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe title="tagmanager" src="https://www.googletagmanager.com/ns.html?id=GTM-KFD26M7"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
