@@ -33,7 +33,7 @@
                 <p class="mt-5 px-2">
                     Registrate gratis con nosotros y empieza a publicar tus propiedades.
                 </p>
-                <x-nav-link class="mt-5" href="{{ route('properties.index') }}">Ver información</x-nav-link>
+                <x-nav-link class="mt-5" href="{{ route('contact.index') }}">Ver información</x-nav-link>
             </div>
         </div>
     </div>

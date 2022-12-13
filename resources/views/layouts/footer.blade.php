@@ -1,5 +1,5 @@
 <!-- component -->
-<footer class="footer mt-20 relative pt-1 border-b-2 border-blue-700 bg-gray-800" style="z-index: -1">
+<footer class="footer mt-20 relative pt-1 border-b-2 border-blue-700 bg-gray-800">
     <div class="container mx-auto px-6">
         <div class="sm:flex sm:mt-8">
             <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
