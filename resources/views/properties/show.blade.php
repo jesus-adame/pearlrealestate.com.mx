@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="bg-white p-6">
-                            <h3 class="pb-5">Descripción</h3>
+                            <h3 class="pb-5">{{ __('Description') }}</h3>
                             <div class="font-semibold rounded-md p-4 border-2 border-gray-200">
                                 @if ($property->property_status)
                                     <div class="bg-{{ $statusColor }}-500 rounded-md p-2 mb-4 text-center uppercase text-{{ $statusColor }}-50">
@@ -105,7 +105,7 @@
                                 </ul>
                             </div>
                             <div class="py-5 w-full">
-                                <h3 class="pb-5">Áreas comunes y amenidades</h3>
+                                <h3 class="pb-5">{{ __('Common areas and amenities') }}</h3>
 
                                 <ul class="list-disc list-inside font-semibold">
                                     @foreach ($property->amenities as $amenity)
