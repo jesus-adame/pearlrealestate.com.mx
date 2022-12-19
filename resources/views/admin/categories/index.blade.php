@@ -2,7 +2,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Amenities') }}
+            {{ __('Categories') }}
         </h2>
     </x-slot>
 
@@ -11,13 +11,13 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-md">
                 <div class="bg-white border-b border-gray-200">
                     <table class="table-fixed w-full">
-                        <caption class="hidden">{{ __('Amenities') }}</caption>
+                        <caption class="hidden">{{ __('Categories') }}</caption>
                         <thead>
                             <tr>
                                 <th class="text-white bg-gray-800 p-2 w-40 text-center">{{ __('Slug') }}</th>
                                 <th class="text-white bg-gray-800 p-2 w-40 text-center">{{ __('Name') }}</th>
                                 <th class="text-white bg-gray-800 p-2 w-40 text-center">
-                                    <a href="{{ route('admin.amenities.create') }}"
+                                    <a href="{{ route('admin.categories.create') }}"
                                     class="py-1 px-2 bg-blue-600 hover:bg-blue-700 text-white inline-block rounded"
                                     >
                                         {{ __('Register') }}
@@ -26,13 +26,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($amenities as $amenity)
+                            @forelse ($categories as $category)
                                 <tr>
-                                    <td class="text-center">{{ $amenity->slug }}</td>
-                                    <td class="text-center">{{ $amenity->name }}</td>
+                                    <td class="text-center">{{ $category->slug }}</td>
+                                    <td class="text-center">{{ $category->name }}</td>
                                     <td class="text-center">
                                         <form
-                                            action="{{ route('admin.amenities.destroy', $amenity->id) }}"
+                                            action="{{ route('admin.categories.destroy', $category->id) }}"
                                             method="post">
                                             @csrf @method('delete')
                                             <button
@@ -45,7 +45,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="2">No hay amenidades registradas.</td>
+                                    <td colspan="3" class="p-2 text-center">No hay categorias registradas.</td>
                                 </tr>
                             @endforelse
                         </tbody>

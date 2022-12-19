@@ -145,10 +145,24 @@
                     @foreach ($amenities as $amenity)
                         <div class="mt-4 flex items-center space-x-2 w-1/3 md:w-1/5 mx-1">
                             <input type="checkbox"
-                                name="{{ $amenity->slug }}"
+                                name="amenities[{{ $amenity->slug }}]"
                                 id="{{ $amenity->slug }}"
                                 @if ($property->amenities->firstWhere('slug', $amenity->slug)) checked="checked" @endif>
                             <x-label for="{{ $amenity->slug }}" value="{{ $amenity->name }}" />
+                        </div>
+                    @endforeach
+                </div>
+                <div class="py-4">
+                    <h3>{{ __('Categories') }}</h3>
+                </div>
+                <div class="flex flex-wrap justify-between w-full">
+                    @foreach ($categories as $category)
+                        <div class="mt-4 flex items-center space-x-2 w-1/3 md:w-1/5 mx-1">
+                            <input type="checkbox"
+                                name="categories[{{ $category->slug }}]"
+                                id="{{ $category->slug }}"
+                                @if ($property->categories->firstWhere('slug', $category->slug)) checked="checked" @endif>
+                            <x-label for="{{ $category->slug }}" value="{{ $category->name }}" />
                         </div>
                     @endforeach
                 </div>

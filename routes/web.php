@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\PropertiesController;
 use App\Http\Controllers\Admin\OwnerController;
 use App\Http\Controllers\Admin\AmenityController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PropertyController;
 
 /*
@@ -23,7 +24,7 @@ Route::get('/', [ WellcomeController::class, 'index' ])->name('home.index');
 Route::get('/dashboard', [ DashboardController::class, 'index' ])->middleware(['auth'])->name('dashboard');
 
 Route::get('/propiedades', [ PropertiesController::class, 'index' ])->name('properties.index');
-Route::get('/propiedades/{property}', [ PropertiesController::class, 'show' ])->name('properties.show');
+Route::get('/propiedades/{slug}', [ PropertiesController::class, 'show' ])->name('properties.show');
 
 Route::get('/contact', [ ContactController::class, 'index' ])->name('contact.index');
 Route::post('/contact/send', [ ContactController::class, 'send' ])->name('contact.send');
@@ -68,6 +69,11 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     Route::get('/amenities/create', [ AmenityController::class, 'create' ])->name('amenities.create');
     Route::post('/amenities', [ AmenityController::class, 'store' ])->name('amenities.store');
     Route::delete('/amenities/{amenity}', [ AmenityController::class, 'destroy' ])->name('amenities.destroy');
+
+    Route::get('/categories', [ CategoryController::class, 'index' ])->name('categories.index');
+    Route::get('/categories/create', [ CategoryController::class, 'create' ])->name('categories.create');
+    Route::post('/categories', [ CategoryController::class, 'store' ])->name('categories.store');
+    Route::delete('/categories/{amenity}', [ CategoryController::class, 'destroy' ])->name('categories.destroy');
 
     Route::get('/users', [ UserController::class, 'index' ])->name('users.index');
     Route::get('/users/create', [ UserController::class, 'create' ])->name('users.create');
