@@ -18,11 +18,20 @@ class PropertiesController extends Controller
         return view('properties.index', compact('properties'));
     }
 
-    public function show(Property $property)
+    public function show(string $slug)
     {
+        abort_if(is_numeric($slug), 404);
+
+        $property = Property::where('slug', $slug)
+            ->first()
+        ;
+
+        abort_if(empty($property), 404);
+
         $properties = Property::orderByDesc('updated_at')
             ->limit(4)
-            ->get();
+            ->get()
+        ;
 
         $statusColor = 'green';
 

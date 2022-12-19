@@ -2,14 +2,14 @@
     @foreach ($properties as $property)
         <div class="sm:w-1/2 lg:w-1/3 xl:w-1/4 px-2 mb-4 py-25">
             <div class="bg-white relative shadow hover:shadow-xl transition duration-500 rounded-lg">
-                <a class="inline-block" href="{{ route('properties.show', $property->id) }}">
+                <a class="inline-block" href="{{ route('properties.show', $property->slug) }}">
                     <figure class="rounded-t-lg overflow-hidden">
                         <img class="w-full" src="{{ asset('/storage/' . $property->image) }}" alt="{{ $property->name }}"/>
                     </figure>
                 </a>
                 <div class="py-6 px-8 rounded-lg bg-white">
                     <h1 class="font-bold text-2xl mb-2 hover:text-gray-800 hover:cursor-pointer hover:underline">
-                        <a class="inline-block" href="{{ route('properties.show', $property->id) }}">
+                        <a class="inline-block" href="{{ route('properties.show', $property->slug) }}">
                             {{ $property->name }}
                         </a>
                     </h1>

@@ -10,6 +10,7 @@ use App\Http\Requests\StorePropertyRequest;
 use App\Http\Requests\UpdatePropertyRequest;
 use App\Models\Amenity;
 use App\Models\AmenityProperty;
+use App\Models\Category;
 use App\Models\Image;
 use App\Models\Owner;
 use Illuminate\Support\Facades\Storage;
@@ -52,7 +53,7 @@ class PropertyController extends Controller
             'agent_id'    => $request->user()->id,
             'owner_id'    => null,
             'name'        => $request->name,
-            'slug'        => Str::random(5),
+            'slug'        => Str::slug($request->name),
             'description' => $request->description,
             'state'       => $request->state,
             'city'        => $request->city,
@@ -62,15 +63,15 @@ class PropertyController extends Controller
             'property_status' => $request->property_status,
         ];
 
-        $features = [
-            'toilets'         => $request->toilets,
-            'bedrooms'        => $request->bedrooms,
-            'cars'            => $request->cars,
-            'floors'          => $request->floors_number,
-            'building_meters' => $request->building_meters,
-            'ground_meters'   => $request->ground_meters,
-            'building_age'    => $request->building_age,
-        ];
+        $features = $request->only([
+            'toilets',
+            'bedrooms',
+            'cars',
+            'floors_number',
+            'building_meters',
+            'ground_meters',
+            'building_age',
+        ]);
 
         $data['features'] = json_encode($features);
 
@@ -89,7 +90,8 @@ class PropertyController extends Controller
 
         return redirect()
             ->route('admin.properties.index')
-            ->with('success', 'Registrado correctamente');
+            ->with('success', 'Registrado correctamente')
+        ;
     }
 
     /**
@@ -203,10 +205,11 @@ class PropertyController extends Controller
     public function edit(Property $property)
     {
         $amenities = Amenity::all();
+        $categories = Category::all();
 
         $states_json = collect(json_decode(file_get_contents(public_path("/assets/estados.json"))));
 
-        return view('admin.properties.edit', compact('property', 'amenities'));
+        return view('admin.properties.edit', compact('property', 'amenities', 'categories'));
     }
 
     /**
@@ -222,7 +225,7 @@ class PropertyController extends Controller
             'agent_id'    => $request->user()->id,
             'owner_id'    => null,
             'name'        => $request->name,
-            'slug'        => Str::random(5),
+            'slug'        => Str::slug($request->name),
             'description' => $request->description,
             'state'       => $request->state,
             'city'        => $request->city,
@@ -231,41 +234,51 @@ class PropertyController extends Controller
             'property_status' => $request->property_status,
         ];
 
-        $features = [
-            'toilets'         => $request->toilets,
-            'bedrooms'        => $request->bedrooms,
-            'cars'            => $request->cars,
-            'floors'          => $request->floors_number,
-            'building_meters' => $request->building_meters,
-            'ground_meters'   => $request->ground_meters,
-            'building_age'    => $request->building_age,
-        ];
+        $features = $request->only([
+            'toilets',
+            'bedrooms',
+            'cars',
+            'floors_number',
+            'building_meters',
+            'ground_meters',
+            'building_age',
+        ]);
+
+        $data['features'] = json_encode($features);
+
+        $property->categories()->detach();
+        $property->amenities()->detach();
+
+        $catSelected = [];
+        $amenitiesSelected = [];
+
+        foreach ($request->get('categories') ?? [] as $index => $status) {
+            $catSelected[] = $index;
+        }
+
+        $categories = Category::whereIn('slug', $catSelected)->get();
+
+        foreach ($request->get('amenities') ?? [] as $index => $status) {
+            $amenitiesSelected[] = $index;
+        }
+
+        $amenities = Amenity::whereIn('slug', $amenitiesSelected)->get();
+
+        $property->categories()->saveMany($categories);
+        $property->amenities()->saveMany($amenities);
+        $property->refresh();
 
         if ($request->file('image')) {
             Storage::delete($property->image);
             $data['image'] = $request->file('image')->store('properties');
         }
 
-        $amenities = Amenity::all();
-
-        $property->amenities()->detach();
-
-        foreach ($amenities as $amenity) {
-            if ($request->input($amenity->slug)) {
-                AmenityProperty::create([
-                    'amenity_id' => $amenity->id,
-                    'property_id' => $property->id,
-                ]);
-            }
-        }
-
-        $data['features'] = json_encode($features);
-
         $property->update($data);
 
         return redirect()
             ->route('admin.properties.index')
-            ->with('success', 'Actualizada correctamente');
+            ->with('success', 'Actualizada correctamente')
+        ;
     }
 
     /**
